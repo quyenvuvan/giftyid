@@ -1,0 +1,1548 @@
+"use client";
+
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { 
+  FaCheck, FaChevronDown, FaChevronUp, 
+  FaCreditCard, FaTruck, FaGamepad, FaCogs, FaEnvelope, FaPalette,
+  FaStore, FaQrcode, FaFileAlt, FaChartBar, FaComments, FaUsers,
+  FaBolt, FaStar, FaGift, FaShieldAlt, FaRocket, FaHeadset, FaSync,
+  FaExclamationTriangle, FaArrowLeft, FaArrowRight
+} from "react-icons/fa";
+import { useConfetti } from "@/hooks/useConfetti";
+
+interface ServiceFeature {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  category: string;
+  enabled: boolean;
+  lastUpdated: string;
+  highlight?: boolean;
+  included?: boolean;
+  details?: string[];
+}
+
+const basePrice = 500000; // 500.000 VNĐ - Gói khởi điểm
+
+// Tính năng cốt lõi - hardcoded (không đổi)
+const coreFeatures: ServiceFeature[] = [
+  {
+    id: "gian-hang",
+    name: "Tạo và Quản lý Gian hàng",
+    description: "Gian hàng chuyên nghiệp trên Zalo Mini App với đầy đủ tính năng",
+    price: 0,
+    included: true,
+    category: "Tính năng cốt lõi",
+    enabled: true,
+    lastUpdated: "",
+    details: [
+      "Gian hàng chuyên nghiệp với giao diện đẹp",
+      "Quản lý sản phẩm/dịch vụ đầy đủ",
+      "Hệ thống đặt hàng và thanh toán",
+      "Quản lý đơn hàng và trạng thái"
+    ]
+  },
+  {
+    id: "hien-thi-giftyid",
+    name: "Hiển thị Gian hàng trên GiftyID",
+    description: "Gắn nhãn Shop Mall - Ưu tiên hiển thị cao nhất trên GiftyID",
+    price: 0,
+    included: true,
+    category: "Tính năng cốt lõi",
+    enabled: true,
+    lastUpdated: "",
+    highlight: true,
+    details: [
+      "Hiển thị ưu tiên cao nhất trên GiftyID",
+      "Gắn nhãn Shop Mall độc quyền",
+      "Tiếp cận 75+ triệu người dùng Zalo",
+      "Tăng khả năng hiển thị và tương tác"
+    ]
+  },
+  {
+    id: "qr-link",
+    name: "Truy cập Gian hàng qua QR & Link",
+    description: "QR Code và link duy nhất cho gian hàng và sản phẩm",
+    price: 0,
+    included: true,
+    category: "Tính năng cốt lõi",
+    enabled: true,
+    lastUpdated: "",
+    details: [
+      "QR Code duy nhất cho gian hàng",
+      "Link chia sẻ cho từng sản phẩm",
+      "Dễ dàng in ấn và chia sẻ",
+      "Tích hợp với marketing offline"
+    ]
+  },
+  {
+    id: "form-tu-van",
+    name: "Biểu mẫu Tương tác (Form)",
+    description: "Form tư vấn và khảo sát khách hàng chuyên nghiệp",
+    price: 0,
+    included: true,
+    category: "Tính năng cốt lõi",
+    enabled: true,
+    lastUpdated: "",
+    details: [
+      "Form tư vấn khách hàng",
+      "Khảo sát nhu cầu",
+      "Đăng ký nhận tin khuyến mãi",
+      "Thu thập feedback khách hàng"
+    ]
+  },
+  {
+    id: "bao-cao",
+    name: "Báo cáo & Thống kê Hiệu quả",
+    description: "Báo cáo phân tích nâng cao về hiệu quả kinh doanh",
+    price: 0,
+    included: true,
+    category: "Tính năng cốt lõi",
+    enabled: true,
+    lastUpdated: "",
+    details: [
+      "Báo cáo doanh thu chi tiết",
+      "Thống kê lượt truy cập",
+      "Phân tích hiệu quả CTV",
+      "Dashboard quản lý real-time"
+    ]
+  },
+  {
+    id: "dien-dan",
+    name: "Diễn đàn CSKH & Hỏi đáp",
+    description: "Kênh giao tiếp hai chiều với khách hàng",
+    price: 0,
+    included: true,
+    category: "Tính năng cốt lõi",
+    enabled: true,
+    lastUpdated: "",
+    details: [
+      "Diễn đàn hỏi đáp khách hàng",
+      "Hỗ trợ khách hàng 24/7",
+      "Xây dựng cộng đồng trung thành",
+      "Quản lý feedback tập trung"
+    ]
+  },
+  {
+    id: "ctv-mgm",
+    name: "Tích hợp Mạng lưới CTV/MGM/Affiliate",
+    description: "Tiếp cận mạng lưới hàng trăm CTV",
+    price: 0,
+    included: true,
+    category: "Tính năng cốt lõi",
+    enabled: true,
+    lastUpdated: "",
+    highlight: true,
+    details: [
+      "Mạng lưới CTV Bưu điện",
+      "Link affiliate tự động",
+      "Hệ thống hoa hồng tự động",
+      "Quản lý hiệu quả CTV"
+    ]
+  },
+  {
+    id: "zalo-oa",
+    name: "Kết nối Zalo Official Account (OA)",
+    description: "Đồng bộ thông tin và gửi tin nhắn chăm sóc qua ZNS",
+    price: 0,
+    included: true,
+    category: "Tính năng cốt lõi",
+    enabled: true,
+    lastUpdated: "",
+    details: [
+      "Đồng bộ dữ liệu khách hàng",
+      "Gửi tin nhắn ZNS tự động",
+      "Chiến dịch marketing trực tiếp",
+      "Chăm sóc khách hàng tự động"
+    ]
+  },
+  {
+    id: "account-manager",
+    name: "Account Manager chuyên biệt 24/7",
+    description: "Hỗ trợ chuyên biệt và tư vấn 24/7",
+    price: 0,
+    included: true,
+    category: "Tính năng cốt lõi",
+    enabled: true,
+    lastUpdated: "",
+    highlight: true,
+    details: [
+      "Account Manager chuyên biệt",
+      "Hỗ trợ kỹ thuật 24/7",
+      "Tư vấn chiến lược kinh doanh",
+      "Đào tạo và hướng dẫn sử dụng"
+    ]
+  }
+];
+
+const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = {
+  // Tính năng cốt lõi
+  "gian-hang": FaStore,
+  "hien-thi-giftyid": FaRocket,
+  "qr-link": FaQrcode,
+  "form-tu-van": FaFileAlt,
+  "bao-cao": FaChartBar,
+  "dien-dan": FaComments,
+  "ctv-mgm": FaUsers,
+  "zalo-oa": FaBolt,
+  "account-manager": FaHeadset,
+  
+  // Tính năng mở rộng (từ Google Sheets)
+  "minigame": FaGamepad,
+  "flash-sale": FaGift,
+  "khach-hang-than-thiet": FaStar,
+  "danh-gia": FaStar,
+  "vi-dien-tu": FaCreditCard,
+  "van-chuyen": FaTruck,
+  "crm-pos-erp": FaCogs,
+  "crm-pos-erp-custom": FaCogs,
+  "marketing-auto": FaEnvelope,
+  "thiet-ke-giao-dien": FaPalette,
+  "api-webhook": FaShieldAlt,
+  "blockchain-integration": FaShieldAlt,
+  "ai-chatbot": FaComments,
+  "api-integration": FaShieldAlt,
+};
+
+const faqs = [
+  {
+    question: "Tôi có thể chọn từng tính năng riêng lẻ không?",
+    answer: "Có, bạn có thể chọn bất kỳ tính năng nào bạn cần. Gói cơ bản 500.000 VNĐ đã bao gồm các tính năng cốt lõi, các tính năng mở rộng sẽ được tính phí bổ sung."
+  },
+  {
+    question: "Phí thiết lập ban đầu có bao gồm không?",
+    answer: "Phí thiết lập ban đầu là 5.000.000 VNĐ cho gói doanh nghiệp, bao gồm việc cài đặt và cấu hình tất cả tính năng được chọn, thiết kế giao diện và đào tạo sử dụng."
+  },
+  {
+    question: "Thời gian triển khai là bao lâu?",
+    answer: "Tính năng cơ bản: 1-2 tuần. Các tính năng nâng cao: 2-4 tuần tùy theo độ phức tạp và số lượng tính năng được chọn. Account Manager sẽ thông báo tiến độ chi tiết."
+  },
+  {
+    question: "Có hỗ trợ sau khi ra mắt không?",
+    answer: "Có đầy đủ. Bao gồm Account Manager chuyên biệt, hỗ trợ kỹ thuật 24/7, cập nhật tính năng miễn phí và tư vấn phát triển kinh doanh."
+  }
+];
+
+export default function TinhPhiPage() {
+  const [dynamicFeatures, setDynamicFeatures] = useState<ServiceFeature[]>([]); // Chỉ chứa extension features từ Google Sheets
+  const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string>("");
+  const [lastUpdated, setLastUpdated] = useState<string>("");
+  const [dataSource, setDataSource] = useState<'sheets' | 'fallback' | null>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [activeTab, setActiveTab] = useState<'core' | 'extension' | 'consultation'>('core');
+  const [expandedFeatures, setExpandedFeatures] = useState<Set<string>>(new Set());
+  const [customRequirements, setCustomRequirements] = useState<Record<string, string>>({});
+  
+  // Thêm state cho mô tả chi tiết nhu cầu của tất cả features
+  const [featureRequirements, setFeatureRequirements] = useState<Record<string, string>>({});
+  
+  // Thêm state cho tính năng khác
+  const [otherFeatureRequirement, setOtherFeatureRequirement] = useState<string>('');
+  
+  // Form state - cập nhật theo form trang dịch vụ
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    package: 'Doanh Nghiệp',
+    company: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [lastSubmittedData, setLastSubmittedData] = useState<typeof formData | null>(null);
+  const { fireSuccessConfetti } = useConfetti();
+
+  const fetchPricingData = async (forceRefresh = false): Promise<void> => {
+    try {
+      setLoading(true);
+      const url = forceRefresh 
+        ? '/api/service-pricing?_clearCache=true' 
+        : '/api/service-pricing';
+      
+      const response = await fetch(url);
+      const data = await response.json();
+      
+      if (data.success && data.features) {
+        // Chỉ lấy features thuộc category "Tính năng mở rộng"
+        const extensionFeatures: ServiceFeature[] = data.features
+          .filter((f: { category: string }) => f.category === 'Tính năng mở rộng')
+          .map((f: { id: string; name: string; description: string; price: number; category: string; enabled: boolean; lastUpdated: string; highlight?: boolean; included?: boolean; details?: string[] }) => {
+            // Tạo details chi tiết dựa trên feature id
+            let details = [];
+            switch(f.id) {
+              case 'crm-pos-erp-custom':
+                details = [
+                  'Tích hợp với hệ thống CRM hiện tại',
+                  'Đồng bộ dữ liệu POS real-time', 
+                  'Kết nối ERP doanh nghiệp',
+                  'Tùy chỉnh theo quy trình riêng'
+                ];
+                break;
+              case 'blockchain-integration':
+                details = [
+                  'Marketplace NFT tùy chỉnh',
+                  'Smart contract tự động',
+                  'Ví blockchain tích hợp',
+                  'Bảo mật đa lớp blockchain'
+                ];
+                break;
+              case 'ai-chatbot':
+                details = [
+                  'AI trả lời tự động 24/7',
+                  'Học từ dữ liệu khách hàng',
+                  'Tích hợp với Zalo OA',
+                  'Dashboard quản lý hội thoại'
+                ];
+                break;
+              case 'api-integration':
+                details = [
+                  'Tích hợp API bên thứ 3',
+                  'Webhook tự động',
+                  'Data mapping linh hoạt',
+                  'Monitoring và logging'
+                ];
+                break;
+              default:
+                details = f.details || [
+                  `Tính năng ${f.name}`,
+                  'Hỗ trợ chuyên biệt 24/7', 
+                  'Tùy chỉnh theo nhu cầu',
+                  'Đào tạo sử dụng chi tiết'
+                ];
+            }
+            
+            return {
+              ...f,
+              icon: iconMap[f.id] || FaCogs,
+              details,
+              highlight: f.highlight || false,
+              included: f.included || false
+            };
+          });
+        setDynamicFeatures(extensionFeatures);
+        setLastUpdated(new Date(data.timestamp).toLocaleString('vi-VN'));
+        setDataSource(data.source || 'sheets');
+        setError("");
+      } else {
+        setDynamicFeatures([]);
+        setDataSource('fallback');
+        setError("Không thể tải dữ liệu tính năng mở rộng từ Google Sheets");
+      }
+    } catch (error) {
+      console.error('Error fetching extension features:', error);
+      setError("Không thể tải dữ liệu tính năng mở rộng từ Google Sheets.");
+      setDynamicFeatures([]);
+      setDataSource('fallback');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const getAllFeatures = (): ServiceFeature[] => {
+    return [...coreFeatures, ...dynamicFeatures]; // Kết hợp hardcoded + Google Sheets
+  };
+
+  const getCoreFeatures = (): ServiceFeature[] => {
+    return coreFeatures; // Sử dụng hardcoded coreFeatures
+  };
+
+  const getExtensionFeatures = (): ServiceFeature[] => {
+    return dynamicFeatures; // dynamicFeatures chỉ chứa extension features từ Google Sheets
+  };
+
+  const calculateTotal = () => {
+    const allFeatures = getAllFeatures();
+    const selectedServices = selectedFeatures
+      .map(id => allFeatures.find(f => f.id === id))
+      .filter((f): f is ServiceFeature => !!f);
+    
+    const monthlyTotal = basePrice + selectedServices
+      .filter(f => !f.included)
+      .reduce((sum, f) => sum + (f.price || 0), 0);
+    
+    const setupFee = 5000000; // 5 triệu VNĐ
+    const totalFirstMonth = monthlyTotal + setupFee;
+    const annualTotal = monthlyTotal * 12;
+    const annualSavings = Math.floor(annualTotal * 0.1);
+
+    return {
+      monthlyTotal,
+      setupFee,
+      totalFirstMonth,
+      selectedServices,
+      annualTotal,
+      annualSavings
+    };
+  };
+
+  const toggleFeature = (featureId: string): void => {
+    setSelectedFeatures(prev =>
+      prev.includes(featureId)
+        ? prev.filter(id => id !== featureId)
+        : [...prev, featureId]
+    );
+  };
+
+  const toggleFaq = (index: number): void => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
+
+  const toggleFeatureExpansion = (featureId: string): void => {
+    setExpandedFeatures(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(featureId)) {
+        newSet.delete(featureId);
+      } else {
+        newSet.add(featureId);
+      }
+      return newSet;
+    });
+  };
+
+  const handleCustomRequirementChange = (featureId: string, requirement: string): void => {
+    setCustomRequirements(prev => ({
+      ...prev,
+      [featureId]: requirement
+    }));
+  };
+
+  // Handler cho mô tả chi tiết nhu cầu của tất cả features
+  const handleFeatureRequirementChange = (featureId: string, requirement: string): void => {
+    setFeatureRequirements(prev => ({
+      ...prev,
+      [featureId]: requirement
+    }));
+  };
+
+  // Handler cho tính năng khác
+  const handleOtherFeatureRequirementChange = (requirement: string): void => {
+    setOtherFeatureRequirement(requirement);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>): void => {
+    const { name, value } = e.target;
+    
+    // Xử lý phone validation như trang dịch vụ
+    let processedValue = value;
+    if (name === 'phone') {
+      processedValue = value.replace(/[^0-9\s\-().]/g, '');
+    }
+    
+    setFormData(prev => ({
+      ...prev,
+      [name]: processedValue
+    }));
+    
+    if (submitStatus !== 'idle') {
+      setSubmitStatus('idle');
+      setErrorMessage('');
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent): Promise<void> => {
+    e.preventDefault();
+    
+    if (!formData.name || !formData.phone || !formData.email) {
+      setSubmitStatus('error');
+      setErrorMessage('Vui lòng điền đầy đủ thông tin bắt buộc');
+      return;
+    }
+
+    // Kiểm tra mô tả chi tiết nhu cầu bắt buộc cho các features không có hasCustomPrice
+    const selectedExtensionFeatures = getExtensionFeatures().filter(f => selectedFeatures.includes(f.id));
+    const missingRequiredDescriptions = selectedExtensionFeatures.filter(f => 
+      f.price > 0 && (!featureRequirements[f.id] || featureRequirements[f.id].trim() === '')
+    );
+
+    if (missingRequiredDescriptions.length > 0) {
+      setSubmitStatus('error');
+      setErrorMessage(`Vui lòng điền mô tả chi tiết nhu cầu cho: ${missingRequiredDescriptions.map(f => f.name).join(', ')}`);
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      // Chuẩn bị thông tin chi tiết cho email
+      const { totalFirstMonth, monthlyTotal, setupFee } = calculateTotal();
+      const selectedFeatureDetails = getExtensionFeatures()
+        .filter(f => selectedFeatures.includes(f.id))
+        .map(f => ({ 
+          name: f.name, 
+          price: f.price, 
+          description: f.description,
+          customRequirement: customRequirements[f.id] || null,
+          featureRequirement: featureRequirements[f.id] || null,
+          hasCustomPrice: f.price === 0
+        }));
+
+      // Thêm thông tin về core features có mô tả nhu cầu
+      const coreFeatureDetails = getCoreFeatures()
+        .filter(f => featureRequirements[f.id])
+        .map(f => ({
+          name: f.name,
+          description: f.description,
+          featureRequirement: featureRequirements[f.id]
+        }));
+      
+      const emailContent = {
+        // Thông tin khách hàng
+        customerInfo: {
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          company: formData.company || 'Không cung cấp',
+          package: formData.package,
+          message: formData.message || 'Không có nhu cầu cụ thể'
+        },
+        
+        // Thông tin gói đã chọn
+        packageInfo: {
+          basePackage: 'Gói Doanh Nghiệp',
+          basePrice: 500000,
+          coreFeatureCount: coreFeaturesList.length,
+          selectedExtensions: selectedFeatureDetails,
+          extensionCount: selectedFeatureDetails.length
+        },
+        
+        // Chi tiết tài chính
+        pricing: {
+          monthlyFee: monthlyTotal,
+          setupFee: setupFee,
+          totalFirstMonth: totalFirstMonth,
+          annualDiscount: Math.round(monthlyTotal * 12 * 0.1)
+        },
+        
+        // Yêu cầu tùy chỉnh
+        customRequirements: customRequirements,
+        
+        // Mô tả chi tiết nhu cầu cho tất cả features
+        featureRequirements: featureRequirements,
+        coreFeatureDetails: coreFeatureDetails,
+        
+        // Tính năng khác
+        otherFeatureRequirement: otherFeatureRequirement || null,
+        
+        // Metadata
+        timestamp: new Date().toISOString(),
+        source: 'Trang tính phí tùy chỉnh'
+      };
+
+      const response = await fetch('/api/consultation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(emailContent),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setLastSubmittedData(formData);
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          package: 'Doanh Nghiệp',
+          company: '',
+          message: ''
+        });
+        setCustomRequirements({});
+        setFeatureRequirements({});
+        setOtherFeatureRequirement('');
+        fireSuccessConfetti();
+        
+        // Auto hide success message after 10 seconds
+        setTimeout(() => {
+          setSubmitStatus('idle');
+          setLastSubmittedData(null);
+        }, 10000);
+      } else {
+        throw new Error('Gửi thông tin thất bại');
+      }
+    } catch (err) {
+      console.error('Submit error:', err);
+      setSubmitStatus('error');
+      setErrorMessage('Có lỗi xảy ra, vui lòng thử lại sau');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchPricingData();
+  }, []);
+
+  const { monthlyTotal, setupFee, totalFirstMonth, selectedServices, annualTotal, annualSavings } = calculateTotal();
+  const coreFeaturesList = getCoreFeatures();
+  const extensionFeatures = getExtensionFeatures();
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Mobile Header */}
+      <div className="bg-white shadow-sm sticky top-0 z-10">
+        <div className="px-4 py-3">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <Link 
+                href="/dich-vu"
+                className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+              >
+                <FaArrowLeft className="w-5 h-5 text-gray-600" />
+              </Link>
+              <div>
+                <h1 className="text-lg sm:text-xl font-bold text-gray-900">
+                  Tính phí Doanh nghiệp
+                </h1>
+                <p className="text-xs sm:text-sm text-gray-600">
+                  Tùy chỉnh theo nhu cầu
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex space-x-2">
+              <button
+                onClick={() => fetchPricingData(true)}
+                disabled={loading}
+                className="p-2 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors disabled:opacity-50"
+              >
+                <FaSync className={`w-4 h-4 text-blue-600 ${loading ? 'animate-spin' : ''}`} />
+              </button>
+
+            </div>
+          </div>
+          
+          {/* Progress Stepper */}
+          <div className="mt-3 mx-2">
+            <div className="flex items-center justify-between mb-2">
+              {/* Step 1 */}
+              <div className="flex items-center space-x-1">
+                <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-medium ${
+                  activeTab === 'core' 
+                    ? 'bg-blue-600 text-white' 
+                    : (activeTab === 'extension' || activeTab === 'consultation') ? 'bg-green-500 text-white' : 'bg-gray-300 text-gray-500'
+                }`}>
+                  1
+                </div>
+                <span className={`text-xs font-medium ${
+                  activeTab === 'core' ? 'text-blue-600' : (activeTab === 'extension' || activeTab === 'consultation') ? 'text-green-600' : 'text-gray-500'
+                }`}>
+                  Cốt lõi
+                </span>
+              </div>
+              
+              {/* Line 1 */}
+              <div className={`flex-1 h-0.5 mx-1 ${
+                activeTab === 'extension' || activeTab === 'consultation' ? 'bg-green-500' : 'bg-gray-300'
+              }`}></div>
+              
+              {/* Step 2 */}
+              <div className="flex items-center space-x-1">
+                <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-medium ${
+                  activeTab === 'extension'
+                    ? 'bg-blue-600 text-white'
+                    : activeTab === 'consultation' ? 'bg-green-500 text-white' : 'bg-gray-300 text-gray-500'
+                }`}>
+                  2
+                </div>
+                <span className={`text-xs font-medium ${
+                  activeTab === 'extension' ? 'text-blue-600' : activeTab === 'consultation' ? 'text-green-600' : 'text-gray-500'
+                }`}>
+                  Mở rộng
+                </span>
+              </div>
+              
+              {/* Line 2 */}
+              <div className={`flex-1 h-0.5 mx-1 ${
+                activeTab === 'consultation' ? 'bg-green-500' : 'bg-gray-300'
+              }`}></div>
+              
+              {/* Step 3 */}
+              <div className="flex items-center space-x-1">
+                <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-medium ${
+                  activeTab === 'consultation'
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-gray-300 text-gray-500'
+                }`}>
+                  3
+                </div>
+                <span className={`text-xs font-medium ${
+                  activeTab === 'consultation' ? 'text-blue-600' : 'text-gray-500'
+                }`}>
+                  Tư vấn
+                </span>
+              </div>
+            </div>
+          </div>
+          
+          {lastUpdated && (
+            <div className="text-xs text-gray-500 mt-2 space-y-1">
+              <p>Giá cập nhật: {lastUpdated}</p>
+              {dataSource && (
+                <p className="flex items-center space-x-1">
+                  {dataSource === 'sheets' ? (
+                    <>
+                      <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                      <span>Tính năng mở rộng từ Google Sheets</span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                      <span>Google Sheets không khả dụng (tính năng mở rộng trống)</span>
+                    </>
+                  )}
+                </p>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div className="px-4 py-6 max-w-6xl mx-auto">
+        <div className="flex flex-col lg:flex-row gap-6">
+          {/* Main Content */}
+          <div className="flex-1">
+            <div className="space-y-6">
+              {/* Error Alert */}
+              {error && (
+                <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                  <div className="flex items-start space-x-3">
+                    <FaExclamationTriangle className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h3 className="text-sm font-medium text-red-800">Có lỗi xảy ra</h3>
+                      <p className="text-sm text-red-700 mt-1">{error}</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {loading ? (
+                <div className="flex justify-center items-center py-12">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+                  <span className="ml-3 text-gray-600">Đang tải...</span>
+                </div>
+              ) : (
+                <>
+                  {/* Step Content */}
+                  {activeTab === 'core' && (
+                    /* Bước 1: Tính năng cốt lõi */
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-200">
+                      <div className="p-4 border-b border-gray-100">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                            <span className="text-blue-600 font-bold text-lg">1</span>
+                          </div>
+                          <div>
+                            <h2 className="text-lg font-semibold text-gray-900">
+                              🔹 Tính năng cốt lõi
+                            </h2>
+                            <p className="text-sm text-gray-600">
+                              Đã bao gồm trong gói cơ bản 500.000 VNĐ/tháng (Nhấn để xem chi tiết)
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="divide-y divide-gray-100">
+                        {coreFeaturesList.map((feature: ServiceFeature) => {
+                          const isExpanded = expandedFeatures.has(feature.id);
+                          
+                          return (
+                            <div key={feature.id} className="p-4">
+                              <button
+                                onClick={() => toggleFeatureExpansion(feature.id)}
+                                className="w-full text-left hover:bg-gray-50 rounded-lg transition-colors p-2 -m-2"
+                              >
+                                <div className="flex items-center justify-between">
+                                  <div className="flex items-center space-x-3">
+                                    <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                      {(() => {
+                                        const IconComponent = iconMap[feature.id] || FaCheck;
+                                        return <IconComponent className="w-5 h-5 text-green-600" />;
+                                      })()}
+                                    </div>
+                                    <div className="flex-1 min-w-0">
+                                      <h3 className="font-medium text-gray-900 text-sm sm:text-base text-left">
+                                        {feature.name}
+                                      </h3>
+                                      <p className="text-xs sm:text-sm text-gray-600 mt-1 text-left">
+                                        {feature.description}
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div className="flex items-center space-x-2 ml-4">
+                                    <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full font-medium">
+                                      ✓ Bao gồm
+                                    </span>
+                                    {isExpanded ? (
+                                      <FaChevronUp className="w-4 h-4 text-gray-500" />
+                                    ) : (
+                                      <FaChevronDown className="w-4 h-4 text-gray-500" />
+                                    )}
+                                  </div>
+                                </div>
+                              </button>
+                              
+                              {isExpanded && (
+                                <div className="mt-4 ml-13 pl-4 border-l-2 border-green-200 animate-in slide-in-from-top-2 duration-200">
+                                  <h4 className="font-medium text-gray-900 text-sm mb-2">Chi tiết tính năng:</h4>
+                                  <ul className="space-y-2 mb-4">
+                                    {(feature.details || []).map((detail: string, index: number) => (
+                                      <li key={index} className="flex items-start text-xs sm:text-sm text-gray-700">
+                                        <FaCheck className="w-3 h-3 text-green-500 mr-2 mt-1 flex-shrink-0" />
+                                        <span>{detail}</span>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                  
+                                  {/* Trường mô tả chi tiết nhu cầu cho core features */}
+                                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                                    <label className="block text-xs font-medium text-blue-800 mb-2">
+                                      💡 Mô tả chi tiết nhu cầu của bạn (tùy chọn):
+                                    </label>
+                                    <textarea
+                                      value={featureRequirements[feature.id] || ''}
+                                      onChange={(e) => handleFeatureRequirementChange(feature.id, e.target.value)}
+                                      placeholder={`VD: Cần tùy chỉnh ${feature.name} theo cách...`}
+                                      className="w-full px-3 py-2 border border-blue-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-xs resize-none"
+                                      rows={2}
+                                    />
+                                    <p className="text-xs text-blue-700 mt-1">
+                                      Mô tả chi tiết sẽ giúp chúng tôi tư vấn và triển khai tốt hơn
+                                    </p>
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                      
+                      {/* Next Button */}
+                      <div className="p-4 border-t border-gray-100 bg-gray-50">
+                        <div className="flex justify-between items-center">
+                          <div className="text-sm text-gray-600">
+                            Bước 1/3: Tính năng cốt lõi
+                          </div>
+                          <button
+                            onClick={() => setActiveTab('extension')}
+                            className="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors font-medium"
+                          >
+                            <span>Tiếp theo</span>
+                            <FaArrowRight className="w-4 h-4" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {activeTab === 'extension' && (
+                    /* Bước 2: Tính năng mở rộng */
+                    <div className="bg-white rounded-xl shadow-sm border border-gray-200">
+                      <div className="p-4 border-b border-gray-100">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                            <span className="text-blue-600 font-bold text-lg">2</span>
+                          </div>
+                          <div>
+                            <h2 className="text-lg font-semibold text-gray-900">
+                              ⚡ Tính năng mở rộng
+                            </h2>
+                            <p className="text-sm text-gray-600">
+                              Chọn tính năng bổ sung theo nhu cầu ({selectedFeatures.length} đã chọn)
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="divide-y divide-gray-100">
+                        {extensionFeatures.length === 0 ? (
+                          <div className="p-8 text-center">
+                            <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                              <FaSync className="w-8 h-8 text-gray-400" />
+                            </div>
+                            <h3 className="text-lg font-medium text-gray-900 mb-2">
+                              Đang tải tính năng mở rộng
+                            </h3>
+                            <p className="text-sm text-gray-600 mb-4">
+                              Tính năng mở rộng từ Google Sheets đang được tải...
+                            </p>
+                            <button
+                              onClick={() => fetchPricingData(true)}
+                              disabled={loading}
+                              className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 transition-colors"
+                            >
+                              <FaSync className={`w-4 h-4 mr-2 ${loading ? 'animate-spin' : ''}`} />
+                              Tải lại
+                            </button>
+                          </div>
+                        ) : (
+                          extensionFeatures.map((feature) => {
+                          const isSelected = selectedFeatures.includes(feature.id);
+                          const hasCustomPrice = feature.price === 0; // Không có giá cụ thể
+                          
+                          return (
+                            <div key={feature.id} className="p-4 hover:bg-gray-50 transition-colors">
+                              <div className="flex items-start space-x-3">
+                                <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors ${
+                                  isSelected 
+                                    ? 'bg-blue-100 text-blue-600' 
+                                    : 'bg-gray-100 text-gray-400'
+                                }`}>
+                                  {(() => {
+                                    const IconComponent = iconMap[feature.id] || FaCogs;
+                                    return <IconComponent className="w-5 h-5" />;
+                                  })()}
+                                </div>
+                                
+                                <div className="flex-1 min-w-0">
+                                  <div className="flex items-start justify-between">
+                                    <div className="flex-1">
+                                      <h3 className="font-medium text-gray-900 text-sm sm:text-base">
+                                        {feature.name}
+                                      </h3>
+                                      <p className="text-xs sm:text-sm text-gray-600 mt-1 leading-relaxed">
+                                        {feature.description}
+                                      </p>
+                                      
+                                      {isSelected && (
+                                        <div className="mt-3 animate-in slide-in-from-top-2 duration-200">
+                                          <ul className="space-y-1 mb-3">
+                                            {(feature.details || []).map((detail: string, index: number) => (
+                                              <li key={index} className="flex items-start text-xs text-gray-700">
+                                                <FaCheck className="w-3 h-3 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                                                <span>{detail}</span>
+                                              </li>
+                                            ))}
+                                          </ul>
+                                          
+                                          {/* Trường mô tả chi tiết nhu cầu cho tất cả extension features */}
+                                          <div className={`border rounded-lg p-3 mb-3 ${hasCustomPrice ? 'bg-yellow-50 border-yellow-200' : 'bg-blue-50 border-blue-200'}`}>
+                                            <label className={`block text-xs font-medium mb-2 ${hasCustomPrice ? 'text-yellow-800' : 'text-blue-800'}`}>
+                                              💡 Mô tả chi tiết nhu cầu của bạn {hasCustomPrice ? '' : '(bắt buộc)'}:
+                                            </label>
+                                            <textarea
+                                              value={featureRequirements[feature.id] || ''}
+                                              onChange={(e) => handleFeatureRequirementChange(feature.id, e.target.value)}
+                                              placeholder={`VD: Cần ${feature.name} để...`}
+                                              className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 text-xs resize-none ${
+                                                hasCustomPrice 
+                                                  ? 'border-yellow-300 focus:ring-yellow-500' 
+                                                  : 'border-blue-300 focus:ring-blue-500'
+                                              }`}
+                                              rows={2}
+                                              required={!hasCustomPrice}
+                                            />
+                                            <p className={`text-xs mt-1 ${hasCustomPrice ? 'text-yellow-700' : 'text-blue-700'}`}>
+                                              {hasCustomPrice 
+                                                ? 'Thông tin này sẽ được gửi cho team để báo giá chính xác'
+                                                : 'Mô tả chi tiết giúp chúng tôi hiểu rõ nhu cầu và triển khai tốt hơn'
+                                              }
+                                            </p>
+                                          </div>
+
+                                          {/* Input cho yêu cầu tùy chỉnh bổ sung nếu không có giá cụ thể */}
+                                          {hasCustomPrice && (
+                                            <div className="bg-orange-50 border border-orange-200 rounded-lg p-3">
+                                              <label className="block text-xs font-medium text-orange-800 mb-2">
+                                                🔧 Yêu cầu tùy chỉnh bổ sung (tùy chọn):
+                                              </label>
+                                              <textarea
+                                                value={customRequirements[feature.id] || ''}
+                                                onChange={(e) => handleCustomRequirementChange(feature.id, e.target.value)}
+                                                placeholder={`VD: Tích hợp với hệ thống ABC, giao diện theo brand riêng...`}
+                                                className="w-full px-3 py-2 border border-orange-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-xs resize-none"
+                                                rows={2}
+                                              />
+                                              <p className="text-xs text-orange-700 mt-1">
+                                                Yêu cầu kỹ thuật đặc biệt hoặc tùy chỉnh nâng cao
+                                              </p>
+                                            </div>
+                                          )}
+                                        </div>
+                                      )}
+                                    </div>
+                                    
+                                    <div className="ml-4 text-right">
+                                      <div className="text-right mb-2">
+                                        {hasCustomPrice ? (
+                                          <div className="font-bold text-orange-600 text-sm">
+                                            Tùy chỉnh
+                                          </div>
+                                        ) : (
+                                          <>
+                                            <div className="font-bold text-gray-900 text-sm sm:text-base">
+                                              +{feature.price.toLocaleString('vi-VN')}
+                                            </div>
+                                            <div className="text-xs text-gray-500">VNĐ/tháng</div>
+                                          </>
+                                        )}
+                                      </div>
+                                      <button
+                                        onClick={() => toggleFeature(feature.id)}
+                                        className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all transform hover:scale-105 ${
+                                          isSelected
+                                            ? hasCustomPrice 
+                                              ? 'bg-orange-600 text-white hover:bg-orange-700 shadow-md'
+                                              : 'bg-blue-600 text-white hover:bg-blue-700 shadow-md'
+                                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                        }`}
+                                      >
+                                        {isSelected ? (
+                                          <>
+                                            <FaCheck className="inline w-3 h-3 mr-1" />
+                                            {hasCustomPrice ? 'Quan tâm' : 'Đã chọn'}
+                                          </>
+                                        ) : (
+                                          hasCustomPrice ? 'Quan tâm' : 'Chọn'
+                                        )}
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })}
+                        
+                        {/* Mục tính năng khác */}
+                        <div className="p-4 border-t border-gray-100 bg-purple-50">
+                          <div className="flex items-start space-x-3">
+                            <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                              <FaCogs className="w-5 h-5 text-purple-600" />
+                            </div>
+                            
+                            <div className="flex-1 min-w-0">
+                              <h3 className="font-medium text-gray-900 text-sm sm:text-base mb-2">
+                                🎯 Tính năng khác
+                              </h3>
+                              <p className="text-xs sm:text-sm text-gray-600 mb-3">
+                                Mô tả chi tiết nhu cầu ngoài những tính năng mở rộng hiện có
+                              </p>
+                              
+                              <div className="bg-white border border-purple-200 rounded-lg p-3">
+                                <label className="block text-xs font-medium text-purple-800 mb-2">
+                                  💡 Mô tả chi tiết tính năng bạn cần:
+                                </label>
+                                <textarea
+                                  value={otherFeatureRequirement}
+                                  onChange={(e) => handleOtherFeatureRequirementChange(e.target.value)}
+                                  placeholder="VD: Cần tích hợp với hệ thống quản lý kho, API thanh toán đặc biệt, báo cáo tùy chỉnh..."
+                                  className="w-full px-3 py-2 border border-purple-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-xs resize-none"
+                                  rows={3}
+                                />
+                                <p className="text-xs text-purple-700 mt-1">
+                                  Mô tả càng chi tiết càng giúp chúng tôi tư vấn và báo giá chính xác hơn
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                                             {/* Navigation Buttons */}
+                       <div className="p-4 border-t border-gray-100 bg-gray-50">
+                         <div className="flex justify-between items-center">
+                           <button
+                             onClick={() => setActiveTab('core')}
+                             className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors font-medium"
+                           >
+                             <FaArrowLeft className="w-4 h-4" />
+                             <span>Quay lại</span>
+                           </button>
+                           
+                           <div className="text-sm text-gray-600">
+                             Bước 2/3: Tính năng mở rộng
+                           </div>
+                           
+                           <button
+                             onClick={() => setActiveTab('consultation')}
+                             className="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors font-medium"
+                           >
+                             <span>Tiếp theo</span>
+                             <FaArrowRight className="w-4 h-4" />
+                           </button>
+                         </div>
+                       </div>
+                    </div>
+                  )}
+
+                  {activeTab === 'consultation' && (
+                    /* Bước 3: Đăng ký tư vấn và FAQ */
+                    <div className="space-y-6">
+                      {/* Form đăng ký tư vấn */}
+                      <div className="bg-white rounded-xl shadow-sm border border-gray-200">
+                        <div className="p-4 border-b border-gray-100">
+                          <div className="flex items-center space-x-3">
+                            <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                              <span className="text-blue-600 font-bold text-lg">3</span>
+                            </div>
+                            <div>
+                              <h2 className="text-lg font-semibold text-gray-900">
+                                📞 Đăng ký tư vấn miễn phí
+                              </h2>
+                              <p className="text-sm text-gray-600">
+                                Liên hệ để được tư vấn chi tiết và báo giá chính xác
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="p-4">
+                          {/* Thông tin đã chọn */}
+                          <div className="bg-blue-50 rounded-lg p-4 mb-4">
+                            <h3 className="font-medium text-blue-900 mb-2">📋 Thông tin gói đã chọn:</h3>
+                            <div className="space-y-2 text-sm">
+                              <div className="flex justify-between">
+                                <span>Gói cơ bản:</span>
+                                <span className="font-medium">500.000 VNĐ/tháng</span>
+                              </div>
+                              <div className="text-xs text-blue-700">
+                                ✓ Bao gồm {coreFeaturesList.length} tính năng cốt lõi
+                              </div>
+                              {selectedFeatures.length > 0 && (
+                                <>
+                                  <div className="border-t border-blue-200 pt-2">
+                                    <div className="font-medium mb-2">Tính năng mở rộng đã chọn:</div>
+                                    {extensionFeatures.filter(f => selectedFeatures.includes(f.id)).map(feature => (
+                                      <div key={feature.id} className="mb-2">
+                                        <div className="flex justify-between text-xs">
+                                          <span>• {feature.name}</span>
+                                          <span>
+                                            {feature.price > 0 
+                                              ? `+${feature.price.toLocaleString('vi-VN')} VNĐ` 
+                                              : 'Báo giá riêng'
+                                            }
+                                          </span>
+                                        </div>
+                                        {/* Hiển thị mô tả chi tiết nhu cầu nếu có */}
+                                        {featureRequirements[feature.id] && (
+                                          <div className="text-xs text-blue-600 mt-1 pl-2 border-l-2 border-blue-300">
+                                            <strong>Nhu cầu:</strong> &quot;{featureRequirements[feature.id]}&quot;
+                                          </div>
+                                        )}
+                                        {/* Hiển thị yêu cầu tùy chỉnh nếu có */}
+                                        {customRequirements[feature.id] && (
+                                          <div className="text-xs text-orange-600 mt-1 pl-2 border-l-2 border-orange-300 italic">
+                                            <strong>Tùy chỉnh:</strong> &quot;{customRequirements[feature.id]}&quot;
+                                          </div>
+                                        )}
+                                      </div>
+                                    ))}
+                                  </div>
+                                  <div className="border-t border-blue-200 pt-2 flex justify-between font-medium">
+                                    <span>Tổng tháng đầu:</span>
+                                    <span className="text-blue-700">
+                                      {extensionFeatures.some(f => selectedFeatures.includes(f.id) && f.price === 0)
+                                        ? `${calculateTotal().totalFirstMonth.toLocaleString('vi-VN')} VNĐ + báo giá riêng`
+                                        : `${calculateTotal().totalFirstMonth.toLocaleString('vi-VN')} VNĐ`
+                                      }
+                                    </span>
+                                  </div>
+                                </>
+                              )}
+                              
+                              {/* Hiển thị core features có mô tả nhu cầu */}
+                              {Object.keys(featureRequirements).some(key => 
+                                getCoreFeatures().some(f => f.id === key) && featureRequirements[key]
+                              ) && (
+                                <div className="border-t border-blue-200 pt-2">
+                                  <div className="font-medium mb-2">Tính năng cốt lõi có nhu cầu đặc biệt:</div>
+                                  {getCoreFeatures()
+                                    .filter(f => featureRequirements[f.id])
+                                    .map(feature => (
+                                      <div key={feature.id} className="mb-2">
+                                        <div className="text-xs">
+                                          <span>• {feature.name}</span>
+                                        </div>
+                                        <div className="text-xs text-blue-600 mt-1 pl-2 border-l-2 border-blue-300">
+                                          <strong>Nhu cầu:</strong> &quot;{featureRequirements[feature.id]}&quot;
+                                        </div>
+                                      </div>
+                                    ))}
+                                </div>
+                              )}
+                              
+                              {/* Hiển thị tính năng khác nếu có */}
+                              {otherFeatureRequirement && (
+                                <div className="border-t border-blue-200 pt-2">
+                                  <div className="font-medium mb-2">Tính năng khác:</div>
+                                  <div className="text-xs text-purple-600 pl-2 border-l-2 border-purple-300">
+                                    &quot;{otherFeatureRequirement}&quot;
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+
+                          {/* Thông báo thành công - hiển thị thay thế form */}
+                          {submitStatus === 'success' ? (
+                            <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-lg p-4 text-center animate-in fade-in slide-in-from-bottom-4 duration-500 relative">
+                              <button
+                                onClick={() => {
+                                  setSubmitStatus('idle');
+                                  setLastSubmittedData(null);
+                                }}
+                                className="absolute top-2 right-2 text-green-600 hover:text-green-800 transition-colors"
+                                title="Đóng thông báo"
+                              >
+                                <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                  <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                                </svg>
+                              </button>
+                              <div className="flex items-center justify-center mb-3">
+                                <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center animate-bounce">
+                                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                  </svg>
+                                </div>
+                              </div>
+                              <h3 className="text-lg font-bold text-green-800 mb-2">
+                                🎉 Đăng ký thành công!
+                              </h3>
+                              <p className="text-green-700 text-sm leading-relaxed mb-3">
+                                Cảm ơn <strong>{lastSubmittedData?.name || 'bạn'}</strong> đã quan tâm đến dịch vụ!<br />
+                                Chúng tôi đã gửi thông tin chi tiết đến email <strong>{lastSubmittedData?.email}</strong><br />
+                                và sẽ liên hệ qua số <strong>{lastSubmittedData?.phone}</strong> trong 24h tới.
+                              </p>
+                              <div className="bg-green-100 rounded-lg p-3 text-xs text-green-700">
+                                📧 Email xác nhận đã được gửi với thông tin:
+                                <br />• Chi tiết gói {lastSubmittedData?.package}
+                                <br />• Báo giá chính xác: {calculateTotal().totalFirstMonth.toLocaleString('vi-VN')} VNĐ
+                                <br />• Hướng dẫn triển khai
+                              </div>
+                              <div className="mt-4 flex items-center justify-center space-x-2 text-xs text-green-600">
+                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>Thông báo tự động đóng sau 15 giây</span>
+                              </div>
+                            </div>
+                          ) : (
+                            /* Form đăng ký chi tiết */
+                            <form onSubmit={handleSubmit} className="space-y-4">
+                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    Họ và tên <span className="text-red-500">*</span>
+                                  </label>
+                                  <input 
+                                    type="text" 
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleInputChange}
+                                    className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" 
+                                    placeholder="Nhập họ tên của bạn"
+                                    required
+                                  />
+                                </div>
+                                <div>
+                                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    Số điện thoại <span className="text-red-500">*</span>
+                                  </label>
+                                  <input 
+                                    type="tel" 
+                                    name="phone"
+                                    value={formData.phone}
+                                    onChange={handleInputChange}
+                                    className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" 
+                                    placeholder="0987654321"
+                                    pattern="^(0[235789])[0-9]{8}$"
+                                    title="Số điện thoại 10 chữ số, bắt đầu 02,03,05,07,08,09"
+                                    required
+                                  />
+                                </div>
+                              </div>
+                              
+                              <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                  Email <span className="text-red-500">*</span>
+                                </label>
+                                <input 
+                                  type="email" 
+                                  name="email"
+                                  value={formData.email}
+                                  onChange={handleInputChange}
+                                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" 
+                                  placeholder="email@company.com"
+                                  required
+                                />
+                                <p className="text-xs text-gray-500 mt-1">
+                                  📧 Thông tin chi tiết sẽ được gửi đến email này
+                                </p>
+                              </div>
+                              
+                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    Gói dịch vụ quan tâm
+                                  </label>
+                                  <select 
+                                    name="package"
+                                    value={formData.package}
+                                    onChange={handleInputChange}
+                                    className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                  >
+                                    <option>Doanh Nghiệp</option>
+                                    <option>Doanh Nghiệp Plus</option>
+                                    <option>Enterprise</option>
+                                  </select>
+                                </div>
+                                <div>
+                                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                                    Tên công ty/tổ chức
+                                  </label>
+                                  <input 
+                                    type="text" 
+                                    name="company"
+                                    value={formData.company}
+                                    onChange={handleInputChange}
+                                    className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" 
+                                    placeholder="Tên công ty (tùy chọn)"
+                                  />
+                                </div>
+                              </div>
+                              
+                              <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                  Nhu cầu cụ thể (tùy chọn)
+                                </label>
+                                <textarea 
+                                  name="message"
+                                  value={formData.message}
+                                  onChange={handleInputChange}
+                                  rows={3}
+                                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm resize-none" 
+                                  placeholder="Mô tả chi tiết nhu cầu của bạn để chúng tôi tư vấn tốt hơn..."
+                                ></textarea>
+                                <p className="text-xs text-gray-500 mt-1">
+                                  💡 Thông tin này giúp chúng tôi tư vấn chính xác hơn
+                                </p>
+                              </div>
+                              
+                              <button 
+                                type="submit"
+                                disabled={isSubmitting}
+                                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 disabled:from-blue-400 disabled:to-blue-400 disabled:cursor-not-allowed text-white font-bold py-3 px-4 rounded-lg shadow-md transition duration-200 text-sm"
+                              >
+                                {isSubmitting ? (
+                                  <span className="flex items-center justify-center">
+                                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                    </svg>
+                                    Đang gửi thông tin...
+                                  </span>
+                                ) : (
+                                  '📧 Gửi thông tin & Nhận báo giá qua Email'
+                                )}
+                              </button>
+
+                              {/* Thông báo lỗi */}
+                              {submitStatus === 'error' && (
+                                <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-center">
+                                  <div className="flex items-center justify-center mb-2">
+                                    <svg className="w-6 h-6 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    <span className="text-red-800 font-medium">Có lỗi xảy ra</span>
+                                  </div>
+                                  <p className="text-red-700 text-sm">
+                                    {errorMessage || 'Vui lòng thử lại sau.'}
+                                  </p>
+                                </div>
+                              )}
+                            </form>
+                          )}
+                        </div>
+                        
+                        {/* Navigation Buttons */}
+                        <div className="p-4 border-t border-gray-100 bg-gray-50">
+                          <div className="flex justify-between items-center">
+                            <button
+                              onClick={() => setActiveTab('extension')}
+                              className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors font-medium"
+                            >
+                              <FaArrowLeft className="w-4 h-4" />
+                              <span>Quay lại</span>
+                            </button>
+                            
+                            <div className="text-sm text-gray-600">
+                              Bước 3/3: Đăng ký tư vấn
+                            </div>
+                            
+                            <div className="text-sm font-medium text-green-600">
+                              ✓ Hoàn thành
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* FAQ Section */}
+                      <div className="bg-white rounded-xl shadow-sm border border-gray-200">
+                        <div className="p-4 border-b border-gray-100">
+                          <h2 className="text-lg font-semibold text-gray-900">
+                            ❓ Câu hỏi thường gặp
+                          </h2>
+                          <p className="text-sm text-gray-600 mt-1">
+                            Những thắc mắc phổ biến về dịch vụ
+                          </p>
+                        </div>
+                        
+                        <div className="divide-y divide-gray-100">
+                          {faqs.map((faq, index) => (
+                            <div key={index} className="p-4">
+                              <button
+                                onClick={() => toggleFaq(index)}
+                                className="w-full text-left flex items-center justify-between hover:bg-gray-50 rounded-lg p-2 -m-2 transition-colors"
+                              >
+                                <span className="font-medium text-gray-900 text-sm pr-4">{faq.question}</span>
+                                {openFaq === index ? (
+                                  <FaChevronUp className="w-4 h-4 text-gray-500 flex-shrink-0" />
+                                ) : (
+                                  <FaChevronDown className="w-4 h-4 text-gray-500 flex-shrink-0" />
+                                )}
+                              </button>
+                              
+                              {openFaq === index && (
+                                <div className="mt-3 pl-2 animate-in slide-in-from-top-2 duration-200">
+                                  <p className="text-sm text-gray-600 leading-relaxed">{faq.answer}</p>
+                                </div>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                                                </>
+                              )}
+                              
+                              {/* Hiển thị core features có mô tả nhu cầu */}
+                              {Object.keys(featureRequirements).some(key => 
+                                getCoreFeatures().some(f => f.id === key) && featureRequirements[key]
+                              ) && (
+                                <div className="border-t border-blue-200 pt-2">
+                                  <div className="font-medium mb-2">Tính năng cốt lõi có nhu cầu đặc biệt:</div>
+                                  {getCoreFeatures()
+                                    .filter(f => featureRequirements[f.id])
+                                    .map(feature => (
+                                      <div key={feature.id} className="mb-2">
+                                        <div className="text-xs">
+                                          <span>• {feature.name}</span>
+                                        </div>
+                                        <div className="text-xs text-blue-600 mt-1 pl-2 border-l-2 border-blue-300">
+                                          <strong>Nhu cầu:</strong> &quot;{featureRequirements[feature.id]}&quot;
+                                        </div>
+                                      </div>
+                                    ))}
+                                </div>
+                              )}
+                              
+                              {/* Hiển thị tính năng khác nếu có */}
+                              {otherFeatureRequirement && (
+                                <div className="border-t border-blue-200 pt-2">
+                                  <div className="font-medium mb-2">Tính năng khác:</div>
+                                  <div className="text-xs text-purple-600 pl-2 border-l-2 border-purple-300">
+                                    &quot;{otherFeatureRequirement}&quot;
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+
+          {/* Sidebar - Pricing Only */}
+          <div className="lg:w-80 space-y-6">
+            {/* Bảng tính phí */}
+            <div className="bg-white rounded-xl shadow-sm border border-gray-200 sticky top-24">
+              <div className="p-4 border-b border-gray-100">
+                <h2 className="text-lg font-semibold text-gray-900">
+                  💰 Tổng chi phí
+                </h2>
+                <p className="text-xs text-gray-600 mt-1">
+                  Giá tự động cập nhật theo lựa chọn
+                </p>
+              </div>
+              
+              <div className="p-4 space-y-3">
+                <div className="flex justify-between text-sm">
+                  <span>Gói cơ bản:</span>
+                  <span className="font-medium">{basePrice.toLocaleString('vi-VN')} VNĐ/tháng</span>
+                </div>
+                <div className="text-xs text-gray-500 -mt-1">
+                  ✓ Bao gồm {coreFeaturesList.length} tính năng cốt lõi
+                </div>
+                
+                {selectedServices.filter(s => (s.price || 0) > 0).map((service) => (
+                  <div key={service.id} className="flex justify-between text-sm">
+                    <span className="truncate mr-2">{service.name}:</span>
+                    <span className="font-medium">+{(service.price || 0).toLocaleString('vi-VN')} VNĐ</span>
+                  </div>
+                ))}
+                
+                <div className="border-t pt-3">
+                  <div className="flex justify-between font-semibold">
+                    <span>Phí hàng tháng:</span>
+                    <span className="text-blue-600">{monthlyTotal.toLocaleString('vi-VN')} VNĐ</span>
+                  </div>
+                </div>
+                
+                <div className="flex justify-between text-sm text-gray-600">
+                  <span>Phí thiết lập (1 lần):</span>
+                  <span>{setupFee.toLocaleString('vi-VN')} VNĐ</span>
+                </div>
+                
+                <div className="border-t pt-3">
+                  <div className="flex justify-between text-lg font-bold text-green-600">
+                    <span>Tổng tháng đầu:</span>
+                    <span>{totalFirstMonth.toLocaleString('vi-VN')} VNĐ</span>
+                  </div>
+                </div>
+
+                {/* Thanh toán năm */}
+                <div className="bg-blue-50 rounded-lg p-3 mt-4">
+                  <h3 className="font-semibold text-blue-900 mb-2 text-sm">💡 Tiết kiệm 10% khi thanh toán năm</h3>
+                  <div className="space-y-1 text-xs">
+                    <div className="flex justify-between">
+                      <span>Phí năm (12 tháng):</span>
+                      <span className="font-medium">{annualTotal.toLocaleString('vi-VN')} VNĐ</span>
+                    </div>
+                    <div className="flex justify-between text-green-600">
+                      <span>Tiết kiệm:</span>
+                      <span className="font-bold">-{annualSavings.toLocaleString('vi-VN')} VNĐ</span>
+                    </div>
+                    <div className="flex justify-between font-bold text-blue-600">
+                      <span>Thanh toán năm:</span>
+                      <span>{(annualTotal - annualSavings).toLocaleString('vi-VN')} VNĐ</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* CTA Button */}
+                <div className="pt-3 border-t">
+                  <button
+                    onClick={() => setActiveTab('consultation')}
+                    className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-3 px-4 rounded-lg shadow-md transition duration-200 text-sm"
+                  >
+                    📞 Đăng ký tư vấn ngay
+                  </button>
+                  <p className="text-xs text-gray-500 text-center mt-2">
+                    Nhận báo giá chính xác qua email
+                  </p>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+} 
