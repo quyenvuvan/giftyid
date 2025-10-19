@@ -354,7 +354,7 @@ export default function Header() {
               </div>
 
               <Link href="/sell" className="nav-link">
-                Bán hàng trên GiftyID
+             Bán hàng trên PostGifty
               </Link>
               <Link href="/collaborator" className="nav-link">
                 Chương trình CTV bán hàng
@@ -371,7 +371,7 @@ export default function Header() {
                 Trang chủ
               </Link>
               <Link href="/sell" className="py-3 px-4 hover:bg-blue-700 font-medium border-b border-blue-500 transition-colors duration-200">
-                Bán hàng trên GiftyID
+             Bán hàng trên PostGifty
               </Link>
               <Link href="/collaborator" className="py-3 px-4 hover:bg-blue-700 font-medium transition-colors duration-200">
                 Chương trình CTV bán hàng
@@ -598,7 +598,7 @@ export default function Header() {
             </div>
 
             <Link href="/sell" className="nav-link hover:bg-white/10 transition-colors duration-200" onClick={handleNavClick}>
-              Bán hàng trên GiftyID
+            Bán hàng trên PostGifty
             </Link>
             <Link href="/collaborator" className="nav-link hover:bg-white/10 transition-colors duration-200" onClick={handleNavClick}>
               Chương trình CTV bán hàng
@@ -699,7 +699,7 @@ export default function Header() {
               className="py-3 px-4 hover:bg-blue-700 font-medium border-b border-blue-500 transition-colors duration-200"
               onClick={handleNavClick}
             >
-              Bán hàng trên GiftyID
+            Bán hàng trên PostGifty
             </Link>
             <Link
               href="/collaborator"
