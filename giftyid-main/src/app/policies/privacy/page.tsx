@@ -37,7 +37,7 @@ export default function PrivacyPage() {
               <div className="mb-12">
                 <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg mb-8">
                   <p className="text-adaptive-gray leading-relaxed">
-                    Công ty Cổ phần Công nghệ Gifty Tech (&quot;GiftyID&quot;, &quot;chúng tôi&quot;) hiểu rằng sự riêng tư và bảo mật thông tin cá nhân là vô cùng quan trọng đối với người dùng. Vì vậy, chúng tôi cam kết nỗ lực tối đa để bảo vệ thông tin của bạn khi sử dụng nền tảng thương mại dịch vụ GiftyID.
+                    Công ty Cổ phần Công nghệ Gifty Tech (&quot;GiftyID&quot;, &quot;chúng tôi&quot;) hiểu rằng sự riêng tư và bảo mật thông tin cá nhân là vô cùng quan trọng đối với người dùng. Vì vậy, chúng tôi cam kết nỗ lực tối đa để bảo vệ thông tin của bạn khi sử dụng nền tảng thương mại dịch vụ PostGifty.
                   </p>
                   <p className="text-adaptive-gray leading-relaxed mt-4">
                     Chính sách này mô tả cách chúng tôi thu thập, sử dụng, lưu trữ và bảo vệ thông tin cá nhân của bạn, tuân thủ theo các quy định của Nghị định 52/2013/NĐ-CP và các văn bản pháp luật liên quan về bảo vệ thông tin cá nhân.
@@ -68,7 +68,7 @@ export default function PrivacyPage() {
                     </div>
                     <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
                       <h4 className="font-semibold text-adaptive-heading mb-2">👤 Quản lý tài khoản</h4>
-                      <p className="text-sm">Cung cấp cho bạn một tài khoản để quản lý các giao dịch và thông tin cá nhân trên GiftyID.</p>
+                      <p className="text-sm">Cung cấp cho bạn một tài khoản để quản lý các giao dịch và thông tin cá nhân trên PostGifty.</p>
                     </div>
                     <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
                       <h4 className="font-semibold text-adaptive-heading mb-2">🎯 Cá nhân hóa trải nghiệm</h4>
@@ -89,7 +89,7 @@ export default function PrivacyPage() {
                   2. Phạm vi thu thập thông tin
                 </h2>
                 <div className="space-y-4 text-adaptive-gray leading-relaxed">
-                  <p>Để phục vụ các mục đích trên, GiftyID có thể thu thập các thông tin sau:</p>
+                  <p>Để phục vụ các mục đích trên, PostGifty có thể thu thập các thông tin sau:</p>
                   <div className="space-y-3 mt-4">
                     <div className="flex items-start space-x-3 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
                       <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
@@ -120,7 +120,7 @@ export default function PrivacyPage() {
                   3. Phạm vi sử dụng thông tin
                 </h2>
                 <div className="space-y-4 text-adaptive-gray leading-relaxed">
-                  <p>Thông tin của bạn được sử dụng trong phạm vi nội bộ của GiftyID và chỉ được chia sẻ cho các bên thứ ba khi thực sự cần thiết để thực hiện giao dịch, cụ thể:</p>
+                  <p>Thông tin của bạn được sử dụng trong phạm vi nội bộ của PostGifty và chỉ được chia sẻ cho các bên thứ ba khi thực sự cần thiết để thực hiện giao dịch, cụ thể:</p>
                   <div className="grid md:grid-cols-3 gap-4 mt-6">
                     <div className="border border-blue-200 dark:border-blue-800 p-4 rounded-lg">
                       <h4 className="font-semibold text-blue-600 dark:text-blue-400 mb-2">🏪 Đối tác Bán hàng</h4>
@@ -151,7 +151,7 @@ export default function PrivacyPage() {
                 </h2>
                 <div className="space-y-4 text-adaptive-gray leading-relaxed">
                   <div className="bg-yellow-50 dark:bg-yellow-900/20 p-6 rounded-lg">
-                    <p>Dữ liệu cá nhân của khách hàng sẽ được lưu trữ cho đến khi có yêu cầu hủy bỏ từ chính khách hàng hoặc khi tài khoản không hoạt động trong một thời gian dài theo quy định của GiftyID. Trong mọi trường hợp, thông tin sẽ được lưu trữ và bảo mật trên máy chủ của chúng tôi theo quy định của pháp luật.</p>
+                    <p>Dữ liệu cá nhân của khách hàng sẽ được lưu trữ cho đến khi có yêu cầu hủy bỏ từ chính khách hàng hoặc khi tài khoản không hoạt động trong một thời gian dài theo quy định của PostGifty. Trong mọi trường hợp, thông tin sẽ được lưu trữ và bảo mật trên máy chủ của chúng tôi theo quy định của pháp luật.</p>
                   </div>
                 </div>
               </div>
@@ -184,7 +184,7 @@ export default function PrivacyPage() {
                         <span className="text-blue-600 dark:text-blue-400 font-bold text-sm">1</span>
                       </div>
                       <div>
-                        <p>Đăng nhập vào tài khoản trên nền tảng GiftyID và chỉnh sửa thông tin.</p>
+                        <p>Đăng nhập vào tài khoản trên nền tảng PostGifty và chỉnh sửa thông tin.</p>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3 p-4 border border-adaptive rounded-lg">
@@ -192,7 +192,7 @@ export default function PrivacyPage() {
                         <span className="text-green-600 dark:text-green-400 font-bold text-sm">2</span>
                       </div>
                       <div>
-                        <p>Liên hệ với bộ phận hỗ trợ khách hàng của GiftyID để được trợ giúp.</p>
+                        <p>Liên hệ với bộ phận hỗ trợ khách hàng của PostGifty để được trợ giúp.</p>
                       </div>
                     </div>
                   </div>
@@ -209,7 +209,7 @@ export default function PrivacyPage() {
                   <div className="space-y-4">
                     <div className="flex items-start space-x-3 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
                       <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <p>GiftyID cam kết bảo mật tuyệt đối thông tin cá nhân của bạn bằng các phương pháp kỹ thuật và tổ chức tiên tiến như mã hóa SSL, tường lửa và quy trình kiểm soát truy cập nghiêm ngặt.</p>
+                      <p>PostGifty cam kết bảo mật tuyệt đối thông tin cá nhân của bạn bằng các phương pháp kỹ thuật và tổ chức tiên tiến như mã hóa SSL, tường lửa và quy trình kiểm soát truy cập nghiêm ngặt.</p>
                     </div>
                     <div className="flex items-start space-x-3 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
                       <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
@@ -217,7 +217,7 @@ export default function PrivacyPage() {
                     </div>
                     <div className="flex items-start space-x-3 p-4 bg-orange-50 dark:bg-orange-900/20 rounded-lg">
                       <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <p>Trong trường hợp máy chủ lưu trữ thông tin bị hacker tấn công dẫn đến mất mát dữ liệu, GiftyID sẽ có trách nhiệm thông báo vụ việc cho cơ quan chức năng để điều tra xử lý kịp thời và thông báo cho bạn được biết.</p>
+                      <p>Trong trường hợp máy chủ lưu trữ thông tin bị hacker tấn công dẫn đến mất mát dữ liệu, PostGifty sẽ có trách nhiệm thông báo vụ việc cho cơ quan chức năng để điều tra xử lý kịp thời và thông báo cho bạn được biết.</p>
                     </div>
                   </div>
                 </div>
@@ -232,7 +232,7 @@ export default function PrivacyPage() {
                 <div className="space-y-4 text-adaptive-gray leading-relaxed">
                   <p className="mb-4">Liên quan đến việc thông tin cá nhân bị sử dụng sai mục đích:</p>
                   <div className="bg-red-50 dark:bg-red-900/20 p-6 rounded-lg border-l-4 border-red-500">
-                    <p>Khi phát hiện thông tin cá nhân của mình bị sử dụng sai mục đích hoặc phạm vi, Người dùng có quyền gửi khiếu nại đến GiftyID qua các kênh liên lạc chính thức. GiftyID sẽ dùng mọi nguồn lực để xác minh và phản hồi trong thời gian sớm nhất, đồng thời có các biện pháp xử lý phù hợp.</p>
+                    <p>Khi phát hiện thông tin cá nhân của mình bị sử dụng sai mục đích hoặc phạm vi, Người dùng có quyền gửi khiếu nại đến PostGifty qua các kênh liên lạc chính thức. PostGifty sẽ dùng mọi nguồn lực để xác minh và phản hồi trong thời gian sớm nhất, đồng thời có các biện pháp xử lý phù hợp.</p>
                   </div>
                 </div>
               </div>

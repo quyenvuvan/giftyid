@@ -180,10 +180,10 @@ export default function CollaboratorPage() {
     <div className="container mx-auto px-4 py-8">
       {/* Phần Hero */}
       <div className="mb-12 p-8 bg-gradient-to-r from-blue-500 to-teal-400 text-white text-center rounded-xl shadow-lg">
-        <h1 className="text-4xl font-bold mb-5">GIA NHẬP ĐỘI NGŨ CTV GIFTYID</h1>
+        <h1 className="text-4xl font-bold mb-5">GIA NHẬP ĐỘI NGŨ CTV POSTGIFTY</h1>
         <p className="text-lg mb-8 max-w-3xl mx-auto leading-relaxed text-left">
-          Cùng GiftyID lan tỏa những sản phẩm, dịch vụ chất lượng đến cộng 
-          đồng và nhận về những phần thưởng xứng đáng. Cơ hội tăng thu 
+          Cùng Postgifty lan tỏa những sản phẩm, dịch vụ chất lượng đến cộng
+          đồng và nhận về những phần thưởng xứng đáng. Cơ hội tăng thu
           nhập không giới hạn ngay tại địa phương của bạn!
         </p>
         <button 
@@ -197,7 +197,7 @@ export default function CollaboratorPage() {
       {/* Tại sao nên trở thành CTV */}
       <div className="mb-16">
         <h2 className="text-2xl font-bold mb-10 text-gray-800 dark:text-white border-l-4 border-blue-500 pl-4">
-          Tại Sao Nên Trở Thành CTV của GiftyID?
+          Tại Sao Nên Trở Thành CTV của Postgifty?
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -210,7 +210,7 @@ export default function CollaboratorPage() {
             </div>
             <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-3">Thu Nhập Hấp Dẫn</h3>
             <p className="text-gray-600 dark:text-gray-300">
-              Nhận hoa hồng cao từ mỗi đơn hàng thành công. Thu nhập bền vững từ việc giới thiệu sản phẩm và dịch vụ của GiftyID!
+              Nhận hoa hồng cao từ mỗi đơn hàng thành công. Thu nhập bền vững từ việc giới thiệu sản phẩm và dịch vụ của Postgifty!
             </p>
           </div>
           
@@ -223,7 +223,7 @@ export default function CollaboratorPage() {
             </div>
             <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-3">Sản Phẩm Đa Dạng</h3>
             <p className="text-gray-600 dark:text-gray-300">
-              Giới thiệu nhiều sản phẩm và dịch vụ chất lượng từ các đối tác uy tín của GiftyID.
+              Giới thiệu nhiều sản phẩm và dịch vụ chất lượng từ các đối tác uy tín của Postgifty.
             </p>
           </div>
           
@@ -249,7 +249,7 @@ export default function CollaboratorPage() {
             </div>
             <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-3">Hỗ Trợ Tận Tâm</h3>
             <p className="text-gray-600 dark:text-gray-300">
-              GiftyID luôn đồng hành cùng bạn với đầy đủ thông tin, công cụ và hỗ trợ trong suốt quá trình hoạt động.
+              Postgifty luôn đồng hành cùng bạn với đầy đủ thông tin, công cụ và hỗ trợ trong suốt quá trình hoạt động.
             </p>
           </div>
           
@@ -284,7 +284,7 @@ export default function CollaboratorPage() {
       {/* Làm CTV GiftyID - Đơn Giản Mà Hiệu Quả */}
       <div className="mb-16">
         <h2 className="text-2xl font-bold mb-10 text-gray-800 dark:text-white border-l-4 border-blue-500 pl-4">
-          Làm CTV GiftyID - Đơn Giản & Hiệu Quả!
+          Làm CTV Postgifty - Đơn Giản & Hiệu Quả!
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -336,11 +336,11 @@ export default function CollaboratorPage() {
       {/* Thăng Tiến Cùng GiftyID */}
       <div className="mb-16">
         <h2 className="text-2xl font-bold mb-10 text-gray-800 dark:text-white border-l-4 border-blue-500 pl-4">
-          Thăng Tiến Cùng GiftyID: Trở Thành Trưởng Nhóm CTV!
+          Thăng Tiến Cùng Postgifty: Trở Thành Trưởng Nhóm CTV!
         </h2>
         
         <p className="text-gray-700 dark:text-gray-300 mb-8 text-center italic">
-          GiftyID luôn tìm kiếm và bồi dưỡng những CTV xuất sắc để trở thành những nhà lãnh đạo tiên phong,
+          Postgifty luôn tìm kiếm và bồi dưỡng những CTV xuất sắc để trở thành những nhà lãnh đạo tiên phong,
           dẫn dắt đội nhóm và gặt hái thành công lớn hơn!
         </p>
 
@@ -356,7 +356,7 @@ export default function CollaboratorPage() {
             <ul className="list-disc pl-8 text-gray-600 dark:text-gray-300 space-y-3">
               <li>Nhận thêm hoa hồng đặc biệt từ doanh số của toàn đội nhóm</li>
               <li>Các khoản thưởng hấp dẫn khi nhóm đạt mục tiêu xuất sắc</li>
-              <li>Được GiftyID đào tạo chuyên sâu về kỹ năng lãnh đạo và bán hàng</li>
+              <li>Được Postgifty đào tạo chuyên sâu về kỹ năng lãnh đạo và bán hàng</li>
               <li>Hỗ trợ ngân sách tổ chức các hoạt động team building, gắn kết đội nhóm</li>
               <li>Nhiều đặc quyền và cơ hội phát triển sự nghiệp khác</li>
             </ul>
@@ -373,8 +373,8 @@ export default function CollaboratorPage() {
             <ul className="list-disc pl-8 text-gray-600 dark:text-gray-300 space-y-3">
               <li>Xây dựng, quản lý và truyền cảm hứng cho đội nhóm của mình</li>
               <li>Chủ động tuyển dụng và đào tạo các thành viên mới</li>
-              <li>Đồng hành cùng GiftyID trong các chiến dịch marketing và phát triển thị trường</li>
-              <li>Là cầu nối quan trọng giữa GiftyID và các CTV trong nhóm</li>
+              <li>Đồng hành cùng Postgifty trong các chiến dịch marketing và phát triển thị trường</li>
+              <li>Là cầu nối quan trọng giữa Postgifty và các CTV trong nhóm</li>
               <li>Xây dựng chiến lược phát triển dài hạn cho đội nhóm của bạn</li>
             </ul>
           </div>
@@ -390,7 +390,7 @@ export default function CollaboratorPage() {
           Minh Bạch Trong Thanh Toán
         </h2>
         <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-          GiftyID cam kết quy trình đối soát và thanh toán hoa hồng rõ ràng, minh bạch. Hàng tháng, 
+          Postgifty cam kết quy trình đối soát và thanh toán hoa hồng rõ ràng, minh bạch. Hàng tháng,
           bạn sẽ nhận được bảng tổng kết chi tiết và hoa hồng sẽ được chuyển thẳng vào tài khoản 
           ngân hàng mà bạn đã đăng ký.
         </p>
@@ -438,7 +438,7 @@ export default function CollaboratorPage() {
               </h3>
               <div className="bg-white rounded-lg p-4 mb-4">
                 <p className="text-emerald-700 text-lg leading-relaxed">
-                  Chào mừng <strong className="text-blue-600">{lastSubmittedData?.fullName}</strong> gia nhập đội ngũ CTV GiftyID!
+                  Chào mừng <strong className="text-blue-600">{lastSubmittedData?.fullName}</strong> gia nhập đội ngũ CTV Postgifty!
                 </p>
                 <p className="text-emerald-600 mt-2">
                   Số điện thoại: <strong>{lastSubmittedData?.phone}</strong>
@@ -447,7 +447,7 @@ export default function CollaboratorPage() {
               <div className="bg-blue-50 rounded-lg p-4 mb-4">
                 <p className="text-blue-800 font-medium mb-2">📞 Chúng tôi sẽ liên hệ hướng dẫn chi tiết trong vòng 2 ngày làm việc</p>
                 <p className="text-blue-700 text-sm">
-                  Đội ngũ hỗ trợ sẽ gửi thông tin đào tạo, tài liệu CTV và hướng dẫn bắt đầu kiếm thu nhập cùng GiftyID
+                  Đội ngũ hỗ trợ sẽ gửi thông tin đào tạo, tài liệu CTV và hướng dẫn bắt đầu kiếm thu nhập cùng Postgifty
                 </p>
               </div>
               <div className="bg-yellow-50 rounded-lg p-4 mb-4">
@@ -616,7 +616,7 @@ export default function CollaboratorPage() {
                     onChange={handleInputChange}
                     rows={3}
                     className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white" 
-                    placeholder="Tại sao bạn muốn trở thành CTV của GiftyID?"
+                    placeholder="Tại sao bạn muốn trở thành CTV của Postgifty?"
                   />
                 </div>
                 
@@ -736,7 +736,7 @@ export default function CollaboratorPage() {
                   <Link href="/privacy" className="text-emerald-600 hover:text-emerald-700 underline">
                     chính sách bảo mật
                   </Link>{' '}
-                  của GiftyID.
+                  của Postgifty.
                 </p>
               </form>
             </>

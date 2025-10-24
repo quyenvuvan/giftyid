@@ -223,21 +223,21 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* GiftyID Platform */}
+              {/* Postgifty Platform */}
               <div className="card-elevated p-8 group hover:shadow-2xl transition-all duration-300">
                 <div className="flex items-center mb-6">
                   <div className="w-16 h-16 bg-emerald-600 rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
                     <FaShoppingCart className="text-2xl text-white" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-adaptive-heading">GiftyID</h3>
+                    <h3 className="text-2xl font-bold text-adaptive-heading">Postgifty</h3>
                     <p className="text-emerald-600 font-medium">E-commerce Platform</p>
                   </div>
                 </div>
-                
+
                 <p className="text-adaptive-gray mb-6 leading-relaxed">
-                  Nền tảng thương mại điện tử toàn diện trên Zalo Mini App, kết nối 
-                  triệu người dùng với các doanh nghiệp địa phương. GiftyID mang đến 
+                  Nền tảng thương mại điện tử toàn diện trên Zalo Mini App, kết nối
+                  triệu người dùng với các doanh nghiệp địa phương. Postgifty mang đến
                   trải nghiệm mua sắm seamless và giải pháp bán hàng hiệu quả.
                 </p>
                 

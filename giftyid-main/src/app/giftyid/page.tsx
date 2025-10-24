@@ -196,7 +196,7 @@ export default function GiftyIDPage() {
       }}>
       {/* Hero Section */}
       <header className="bg-gradient-to-r from-[#3D2B56] to-[#1E90FF] text-white py-10 px-4 text-center">
-        <h1 className="text-4xl font-bold mb-2">Thị trường TMĐT Hải Dương, Gifty Tech &amp; Dự án GiftyID</h1>
+        <h1 className="text-4xl font-bold mb-2">Thị trường TMĐT Hải Dương, Gifty Tech &amp; Dự án PostGifty</h1>
         <p className="text-xl">Xu hướng, Phân tích, và Giới thiệu Giải pháp Công nghệ</p>
       </header>
 
@@ -580,17 +580,17 @@ export default function GiftyIDPage() {
         {/* GiftyID Project Section */}
         <section id="gifty-id" className="mb-12">
           <h2 className="text-3xl font-bold mb-6 text-center" style={{ color: '#3D2B56' }}>
-            VI. Dự án GiftyID
+            VI. Dự án PostGifty
           </h2>
           <p className="text-left mb-4 text-lg text-gray-700">
-            GiftyID là một nền tảng thương mại dịch vụ được tích hợp trên Zalo Mini App, với mục tiêu giúp các đối tác dễ dàng
+            PostGifty là một nền tảng thương mại dịch vụ được tích hợp trên Zalo Mini App, với mục tiêu giúp các đối tác dễ dàng
             tiếp cận hàng triệu người dùng Zalo mà không cần khách hàng cài đặt thêm ứng dụng. Nền tảng tập trung vào trải nghiệm
             người dùng địa phương và kết nối cộng đồng, đặc biệt tại Hải Dương trong giai đoạn đầu.
           </p>
 
           {/* Differentiators */}
           <div className="bg-white rounded-xl shadow-lg p-6 mb-8">
-            <h3 className="text-xl font-semibold mb-3" style={{ color: '#1E90FF' }}>Điểm khác biệt của GiftyID</h3>
+            <h3 className="text-xl font-semibold mb-3" style={{ color: '#1E90FF' }}>Điểm khác biệt của PostGifty</h3>
             <div className="space-y-4 text-sm text-gray-700">
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                 <p className="flex items-center">
@@ -600,7 +600,7 @@ export default function GiftyIDPage() {
                 <ul className="list-disc list-inside ml-8 mt-1">
                   <li>Điểm khác biệt cốt lõi, tận dụng mạng lưới bưu cục và VHX làm hạ tầng giao nhận chính.</li>
                   <li>Chính sách vận chuyển cạnh tranh dựa trên biểu cước đã đàm phán với Bưu điện tỉnh.</li>
-                  <li>Quy trình vận hành phối hợp chặt chẽ giữa GiftyID, Đối tác và Bưu điện.</li>
+                  <li>Quy trình vận hành phối hợp chặt chẽ giữa PostGifty, Đối tác và Bưu điện.</li>
                 </ul>
               </div>
               <div className="bg-green-50 border border-green-200 rounded-lg p-4">
@@ -621,7 +621,7 @@ export default function GiftyIDPage() {
                 </p>
                 <ul className="list-disc list-inside ml-8 mt-1">
                   <li>Phí Nền tảng duy nhất (% giá trị sản phẩm), thấp hơn và đơn giản hơn nhiều sàn lớn.</li>
-                  <li>Phí Vận chuyển: GiftyID không thu lợi nhuận từ phí vận chuyển tiêu chuẩn. Đối tác không trả thêm phí VC tiêu chuẩn.</li>
+                  <li>Phí Vận chuyển: PostGifty không thu lợi nhuận từ phí vận chuyển tiêu chuẩn. Đối tác không trả thêm phí VC tiêu chuẩn.</li>
                 </ul>
               </div>
               <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
@@ -630,7 +630,7 @@ export default function GiftyIDPage() {
                   <strong className="text-yellow-700">Định vị Chiến lược là &ldquo;Cầu nối&rdquo; trong Hệ sinh thái VNPT (Tầm nhìn Giai đoạn 2):</strong>
                 </p>
                 <p className="mt-1 ml-8">
-                  Từ thành công với VNPost, GiftyID hướng tới tích hợp sâu hơn với các dịch vụ và nền tảng của Tập đoàn VNPT
+                  Từ thành công với VNPost, PostGifty hướng tới tích hợp sâu hơn với các dịch vụ và nền tảng của Tập đoàn VNPT
                   (hạ tầng số, công nghệ lõi, giải pháp số).
                 </p>
               </div>
@@ -645,7 +645,7 @@ export default function GiftyIDPage() {
             <p className="text-sm text-gray-700 mb-2 flex items-start">
               <span className="text-2xl mt-1 mr-2">🛍️</span>
               <span>
-                <strong>Mua sắm tại địa phương:</strong> GiftyID trở thành một nền tảng mua sắm hàng đầu tại địa phương,
+                <strong>Mua sắm tại địa phương:</strong> PostGifty trở thành một nền tảng mua sắm hàng đầu tại địa phương,
                 kết nối các Đối tác Bán hàng tại Hải Dương với Người mua tại Hải Dương.
                 Các sản phẩm niêm yết đa dạng, bao gồm sản phẩm OCOP và đặc sản địa phương.
               </span>
@@ -670,7 +670,7 @@ export default function GiftyIDPage() {
               <ul className="space-y-3 text-sm text-gray-700">
                 <li className="bg-blue-50 border border-blue-200 rounded-lg p-3">
                   <strong>Tối ưu Logistics:</strong> Mạng lưới bưu cục VNPost, Bưu điện Văn hóa Xã (VHX) làm hạ tầng giao nhận.
-                  Chính sách vận chuyển cạnh tranh, đồng giá. GiftyID không thu lợi từ phí vận chuyển tiêu chuẩn.
+                  Chính sách vận chuyển cạnh tranh, đồng giá. PostGifty không thu lợi từ phí vận chuyển tiêu chuẩn.
                 </li>
                 <li className="text-center text-2xl">⬇️</li>
                 <li className="bg-blue-50 border border-blue-200 rounded-lg p-3">
@@ -686,7 +686,7 @@ export default function GiftyIDPage() {
                 </li>
               </ul>
               <h4 className="font-semibold mt-4 mb-2" style={{ color: '#1E90FF' }}>
-                Mô hình hoạt động GiftyID (Giai đoạn 1):
+                Mô hình hoạt động PostGifty (Giai đoạn 1):
               </h4>
               <div className="text-sm text-gray-700 space-y-1">
                 <p>1. Đối tác cung cấp sản phẩm → Gifty Tech tạo gian hàng.</p>
@@ -700,7 +700,7 @@ export default function GiftyIDPage() {
 
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h4 className="text-xl font-semibold mb-3" style={{ color: '#1E90FF' }}>
-                Chính sách Phí &amp; Vận hành GiftyID (GĐ1)
+                Chính sách Phí &amp; Vận hành PostGifty (GĐ1)
               </h4>
               <div className="space-y-3 text-sm text-gray-700">
                 <div>
@@ -724,13 +724,13 @@ export default function GiftyIDPage() {
                   <strong style={{ color: '#90EE90' }}>Trả hàng &amp; Hoàn tiền:</strong>
                   <ul className="list-disc list-inside ml-4">
                     <li>Trong vòng 3 ngày sau giao hàng thành công (lỗi sản phẩm, sai mô tả, hư hỏng...).</li>
-                    <li>Chi phí vận chuyển trả hàng: Đối tác chịu (nếu lỗi do Đối tác), GiftyID/Bưu điện chịu (nếu lỗi vận chuyển).</li>
+                    <li>Chi phí vận chuyển trả hàng: Đối tác chịu (nếu lỗi do Đối tác), PostGifty/Bưu điện chịu (nếu lỗi vận chuyển).</li>
                   </ul>
                 </div>
                 <div>
                   <strong style={{ color: '#1E90FF' }}>Vận chuyển Nội tỉnh Hải Dương (VNPost - GĐ1):</strong>
                   <p className="text-xs mb-1">
-                    GiftyID không thu lợi từ phí vận chuyển tiêu chuẩn. Đối tác không trả thêm phí VC tiêu chuẩn.
+                    PostGifty không thu lợi từ phí vận chuyển tiêu chuẩn. Đối tác không trả thêm phí VC tiêu chuẩn.
                   </p>
                   <table className="w-full text-xs border border-gray-300">
                     <thead>
@@ -753,7 +753,7 @@ export default function GiftyIDPage() {
                           Trọng lượng 1kg - 2kg <strong>VÀ</strong><br />Giá trị đơn ≥ 300.000 VNĐ
                         </td>
                         <td className="border border-gray-300 p-2">
-                          Đồng giá 22.000 VNĐ (GiftyID có thể hỗ trợ bù chênh lệch nhỏ nếu cước BĐ cao hơn trong ngưỡng này ở giai đoạn đầu)
+                          Đồng giá 22.000 VNĐ (PostGifty có thể hỗ trợ bù chênh lệch nhỏ nếu cước BĐ cao hơn trong ngưỡng này ở giai đoạn đầu)
                         </td>
                       </tr>
                       <tr>
@@ -777,16 +777,16 @@ export default function GiftyIDPage() {
 
           <div className="bg-white rounded-xl shadow-lg p-6 mt-8 border-l-4" style={{ borderColor: '#FFDA63' }}>
             <h3 className="text-2xl font-semibold mb-4" style={{ color: '#1E90FF' }}>
-              Giai đoạn 2: GiftyID - Cầu Nối Số Hóa Doanh Nghiệp Toàn Quốc &amp; Địa Phương
+              Giai đoạn 2: PostGifty - Cầu Nối Số Hóa Doanh Nghiệp Toàn Quốc &amp; Địa Phương
             </h3>
             <p className="text-gray-700 mb-3">
-              Sau khi xây dựng nền tảng vững chắc với VNPost, GiftyID sẽ mở rộng vai trò, trở thành cầu nối trực tiếp hỗ trợ doanh nghiệp trên toàn quốc và thúc đẩy chuyển đổi số cho các doanh nghiệp địa phương một cách rộng rãi. VNPost tiếp tục là đối tác quan trọng trong mạng lưới bán hàng và vận chuyển.
+              Sau khi xây dựng nền tảng vững chắc với VNPost, PostGifty sẽ mở rộng vai trò, trở thành cầu nối trực tiếp hỗ trợ doanh nghiệp trên toàn quốc và thúc đẩy chuyển đổi số cho các doanh nghiệp địa phương một cách rộng rãi. VNPost tiếp tục là đối tác quan trọng trong mạng lưới bán hàng và vận chuyển.
             </p>
             <div className="space-y-3 text-sm text-gray-700">
               <div className="bg-purple-50 border-l-4 border-purple-500 p-3">
                 <strong className="block text-base" style={{ color: '#8A2BE2' }}>🚚 VNPost - Đối tác Vận hành Chiến lược:</strong>
                 <p className="mt-1">
-                  VNPost tiếp tục đóng vai trò là đối tác chủ chốt trong việc cung cấp dịch vụ vận chuyển và hỗ trợ mạng lưới cộng tác viên bán hàng (CTVBH), đảm bảo hiệu quả hoạt động logistics cho GiftyID.
+                  VNPost tiếp tục đóng vai trò là đối tác chủ chốt trong việc cung cấp dịch vụ vận chuyển và hỗ trợ mạng lưới cộng tác viên bán hàng (CTVBH), đảm bảo hiệu quả hoạt động logistics cho PostGifty.
                 </p>
               </div>
               <div className="bg-pink-50 border-l-4 border-pink-500 p-3">
@@ -798,7 +798,7 @@ export default function GiftyIDPage() {
               <div className="bg-blue-50 border-l-4 border-blue-500 p-3">
                 <strong className="block text-base" style={{ color: '#1E90FF' }}>🌐 Mở rộng Kết nối Doanh nghiệp Toàn quốc:</strong>
                 <p className="mt-1">
-                  Chủ động thu hút và tích hợp các doanh nghiệp từ nhiều tỉnh thành trên cả nước vào nền tảng GiftyID, tạo ra một thị trường đa dạng và phong phú.
+                  Chủ động thu hút và tích hợp các doanh nghiệp từ nhiều tỉnh thành trên cả nước vào nền tảng PostGifty, tạo ra một thị trường đa dạng và phong phú.
                 </p>
               </div>
               <div className="bg-green-50 border-l-4 border-green-500 p-3">
@@ -810,19 +810,19 @@ export default function GiftyIDPage() {
               <div className="bg-yellow-50 border-l-4 border-yellow-500 p-3">
                 <strong className="block text-base" style={{ color: '#FFDA63' }}>💡 Nâng cao Trải nghiệm Người dùng và Đối tác:</strong>
                 <p className="mt-1">
-                  Liên tục cải tiến nền tảng GiftyID trên Zalo Mini App với các tính năng mới, giao diện thân thiện hơn, dựa trên phản hồi và xu hướng thị trường, có thể ứng dụng AI để cá nhân hóa.
+                  Liên tục cải tiến nền tảng PostGifty trên Zalo Mini App với các tính năng mới, giao diện thân thiện hơn, dựa trên phản hồi và xu hướng thị trường, có thể ứng dụng AI để cá nhân hóa.
                 </p>
               </div>
             </div>
             <p className="mt-4 text-center font-semibold text-gray-800">
-              Với định hướng này, GiftyID không chỉ là một sàn TMĐT mà còn là một nền tảng hỗ trợ tăng trưởng và số hóa cho doanh nghiệp, với VNPost là một trụ cột vận hành quan trọng.
+              Với định hướng này, PostGifty không chỉ là một sàn TMĐT mà còn là một nền tảng hỗ trợ tăng trưởng và số hóa cho doanh nghiệp, với VNPost là một trụ cột vận hành quan trọng.
             </p>
           </div>
         </section>
       </main>
 
       <footer className="bg-[#3D2B56] text-white text-center p-6">
-        <p>&copy; 2025 Nghiên cứu Thị trường TMĐT Hải Dương &amp; Giới thiệu GiftyID. Infographic được tạo dựa trên báo cáo tổng hợp.</p>
+        <p>&copy; 2025 Nghiên cứu Thị trường TMĐT Hải Dương &amp; Giới thiệu PostGifty. Infographic được tạo dựa trên báo cáo tổng hợp.</p>
       </footer>
     </div>
   );

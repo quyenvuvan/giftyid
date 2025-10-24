@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Quy định giao dịch chung | GiftyID',
-  description: 'Quy định giao dịch chung của GiftyID - Tạo môi trường mua sắm an toàn, minh bạch và bảo vệ quyền lợi hợp pháp của tất cả các bên.',
+  title: 'Quy định giao dịch chung | Postgifty',
+  description: 'Quy định giao dịch chung của Postgifty - Tạo môi trường mua sắm an toàn, minh bạch và bảo vệ quyền lợi hợp pháp của tất cả các bên.',
   keywords: 'quy định giao dịch, chính sách đổi trả, hoàn tiền, kiểm hàng, mua sắm an toàn',
 };
 
@@ -35,10 +35,10 @@ export default function TransactionPolicyPage() {
             <h2 className="text-2xl font-bold text-gray-800">Giới thiệu</h2>
           </div>
           <p className="text-gray-600 leading-relaxed text-lg mb-4">
-            Các điều kiện giao dịch chung này áp dụng cho tất cả các giao dịch được thực hiện trên nền tảng GiftyID, 
+            Các điều kiện giao dịch chung này áp dụng cho tất cả các giao dịch được thực hiện trên nền tảng Postgifty,
             nhằm tạo ra một môi trường mua sắm <span className="font-semibold text-green-600">an toàn, minh bạch</span> và 
             bảo vệ quyền lợi hợp pháp của tất cả các bên tham gia, bao gồm 
-            <span className="font-semibold"> Người Mua, Đối tác Bán hàng và GiftyID</span>.
+            <span className="font-semibold"> Người Mua, Đối tác Bán hàng và Postgifty</span>.
           </p>
           <p className="text-gray-600 leading-relaxed">
             Mọi chính sách đều tuân thủ các quy định tại 
@@ -61,7 +61,7 @@ export default function TransactionPolicyPage() {
             <div className="flex items-start">
               <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
               <p className="text-gray-700">
-                Mọi giao dịch trên GiftyID được thực hiện dựa trên nguyên tắc 
+                Mọi giao dịch trên PostGifty được thực hiện dựa trên nguyên tắc 
                 <span className="font-semibold text-blue-600"> tự nguyện, bình đẳng</span>, và tôn trọng quyền, lợi ích hợp pháp của các bên.
               </p>
             </div>
@@ -74,15 +74,15 @@ export default function TransactionPolicyPage() {
             <div className="flex items-start">
               <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
               <p className="text-gray-700">
-                GiftyID đóng vai trò là <span className="font-semibold text-green-600">nền tảng trung gian</span>, cung cấp hạ tầng công nghệ, 
+                Postgifty đóng vai trò là <span className="font-semibold text-green-600">nền tảng trung gian</span>, cung cấp hạ tầng công nghệ,
                 dịch vụ thanh toán, và hỗ trợ giải quyết các vấn đề phát sinh.
               </p>
             </div>
             <div className="flex items-start">
               <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-4 flex-shrink-0"></div>
               <p className="text-gray-700">
-                Mỗi Đối tác Bán hàng có thể có các chính sách riêng, nhưng không được trái với 
-                <span className="font-semibold"> Quy định chung của GiftyID và pháp luật Việt Nam</span>.
+                Mỗi Đối tác Bán hàng có thể có các chính sách riêng, nhưng không được trái với
+                <span className="font-semibold"> Quy định chung của Postgifty và pháp luật Việt Nam</span>.
               </p>
             </div>
           </div>
@@ -102,7 +102,7 @@ export default function TransactionPolicyPage() {
 
           <div className="bg-orange-50 rounded-lg p-6 mb-6">
             <p className="text-orange-800 font-medium mb-4">
-              Để đảm bảo quyền lợi cho Người Mua, GiftyID cho phép khách hàng kiểm tra sản phẩm cùng với nhân viên giao hàng 
+            Để đảm bảo quyền lợi cho Người Mua, Postgifty cho phép khách hàng kiểm tra sản phẩm cùng với nhân viên giao hàng
               <span className="font-semibold"> (đồng kiểm)</span> tại thời điểm nhận hàng.
             </p>
           </div>
@@ -142,7 +142,7 @@ export default function TransactionPolicyPage() {
                 </div>
                 <div className="flex items-start">
                   <span className="text-orange-600 font-bold mr-2">3.</span>
-                  <p className="text-gray-700">Liên hệ ngay với bộ phận hỗ trợ của GiftyID để được xử lý kịp thời</p>
+                  <p className="text-gray-700">Liên hệ ngay với bộ phận hỗ trợ của Postgifty để được xử lý kịp thời</p>
                 </div>
               </div>
             </div>
@@ -262,7 +262,7 @@ export default function TransactionPolicyPage() {
               <div className="space-y-4 text-blue-700">
                 <div className="flex items-start">
                   <span className="bg-blue-200 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5 flex-shrink-0">1</span>
-                  <p>Việc hoàn tiền sẽ được GiftyID xử lý sau khi nhận được yêu cầu hợp lệ và/sau khi Đối tác Bán hàng đã nhận lại hàng trả về và xác nhận tình trạng sản phẩm</p>
+                  <p>Việc hoàn tiền sẽ được Postgifty xử lý sau khi nhận được yêu cầu hợp lệ và/sau khi Đối tác Bán hàng đã nhận lại hàng trả về và xác nhận tình trạng sản phẩm</p>
                 </div>
                 <div className="flex items-start">
                   <span className="bg-blue-200 text-blue-800 rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5 flex-shrink-0">2</span>

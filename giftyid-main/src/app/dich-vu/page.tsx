@@ -16,7 +16,7 @@ const plans = [
     setup: "2.000.000 VNĐ",
           features: [
         "📝 Gian hàng chuyên nghiệp (Tính năng Bài viết)",
-        "🌟 Hiển thị gian hàng, sản phẩm trên GiftyID",
+        "🌟 Hiển thị gian hàng, sản phẩm trên PostGifty",
         "📱 Truy cập QR Code & Link duy nhất",
         "📝 Form tư vấn & khảo sát khách hàng",
         "📊 Báo cáo hiệu quả kinh doanh cơ bản",
@@ -26,7 +26,7 @@ const plans = [
       ],
     button: { label: "Bắt Đầu Ngay", href: "#signup", variant: "primary" },
     highlight: false,
-          limit: "Hiển thị cơ bản trên GiftyID",
+          limit: "Hiển thị cơ bản trên Postgifty",
     color: "blue",
     badge: "TIẾT KIỆM 70%"
   },
@@ -38,7 +38,7 @@ const plans = [
           features: [
         "✅ Tất cả tính năng Gói Cơ bản",
         "📅 Tính năng Đặt lịch chuyên nghiệp",
-        "🌟 Ưu tiên hiển thị trên GiftyID",
+        "🌟 Ưu tiên hiển thị trên PostGifty",
         "🎯 Công cụ Flash Sale & Voucher cao cấp",
         "⭐ Hệ thống Khách hàng thân thiết & Tích điểm",
         "💳 Tích hợp đa dạng ví điện tử & thanh toán",
@@ -47,7 +47,7 @@ const plans = [
       ],
     button: { label: "Nâng Cấp Ngay", href: "#signup", variant: "primary" },
     highlight: true,
-          limit: "Ưu tiên hiển thị trên GiftyID",
+          limit: "Ưu tiên hiển thị trên Postgifty",
     color: "blue",
     badge: "PHỔ BIẾN NHẤT"
   },
@@ -59,7 +59,7 @@ const plans = [
           features: [
         "✅ Tất cả tính năng Gói Tăng Trưởng",
         "🛒 Tính năng Đặt hàng & E-commerce đầy đủ",
-        "⭐ Hiển thị Shop Mall trên GiftyID",
+        "⭐ Hiển thị Shop Mall trên PostGifty",
         "🚚 Tích hợp vận chuyển VNPost",
         "🔗 Public API & Webhook không giới hạn",
         "🎨 Thiết kế giao diện theo yêu cầu",
@@ -69,7 +69,7 @@ const plans = [
       ],
     button: { label: "Tư Vấn Chuyên Sâu", href: "#enterprise", variant: "outline" },
     highlight: false,
-          limit: "Ưu tiên hiển thị cao nhất trên GiftyID",
+          limit: "Ưu tiên hiển thị cao nhất trên Postgifty",
     color: "purple",
     badge: "ĐỐI TÁC CHIẾN LƯỢC"
   }
@@ -84,13 +84,13 @@ const stats = [
 
 const testimonials = [
   {
-    quote: "Trước đây, việc quản lý lịch hẹn luôn khiến chúng tôi đau đầu với nhiều khách không đến. Với GiftyID, tỷ lệ này giảm 35% nhờ hệ thống nhắc nhở tự động qua Zalo.",
+    quote: "Trước đây, việc quản lý lịch hẹn luôn khiến chúng tôi đau đầu với nhiều khách không đến. Với Postgifty, tỷ lệ này giảm 35% nhờ hệ thống nhắc nhở tự động qua Zalo.",
     author: "Nguyễn Văn A",
     position: "Quản lý Spa Beauty Garden",
     // image: "/img/testimonial1.jpg"
   },
   {
-    quote: "GiftyID giúp chúng tôi tiết kiệm 5 giờ mỗi ngày cho việc quản lý lịch hẹn. Nhân viên không còn phải gọi điện xác nhận, tất cả được tự động hóa qua Zalo.",
+    quote: "Postgifty giúp chúng tôi tiết kiệm 5 giờ mỗi ngày cho việc quản lý lịch hẹn. Nhân viên không còn phải gọi điện xác nhận, tất cả được tự động hóa qua Zalo.",
     author: "Trần Thị B",
     position: "Chủ nhà hàng Sao Việt",
     // image: "/img/testimonial2.jpg"
@@ -105,7 +105,7 @@ const testimonials = [
 
 const faqs = [
   {
-    question: "GiftyID Mini App khác gì so với việc phát triển ứng dụng riêng?",
+    question: "Postgifty Mini App khác gì so với việc phát triển ứng dụng riêng?",
     answer: "Mini App chạy trên nền tảng Zalo, không cần cài đặt riêng, tiết kiệm chi phí phát triển đến 70% so với app riêng. Bạn được tiếp cận sẵn 75 triệu người dùng Zalo với chi phí marketing thấp hơn nhiều."
   },
   {
@@ -113,7 +113,7 @@ const faqs = [
     answer: "Hoàn toàn có thể tích hợp! Hệ thống của chúng tôi cho phép đồng bộ dữ liệu giữa website và Mini App, giúp bạn quản lý tập trung mà vẫn tối ưu trải nghiệm đặt lịch trên cả hai nền tảng."
   },
   {
-    question: "Tôi cần chuẩn bị gì để sử dụng dịch vụ đặt lịch của GiftyID?",
+    question: "Tôi cần chuẩn bị gì để sử dụng dịch vụ đặt lịch của Postgifty?",
     answer: "Bạn chỉ cần cung cấp thông tin doanh nghiệp, danh sách dịch vụ và lịch làm việc. Đội ngũ của chúng tôi sẽ thiết lập toàn bộ hệ thống và hướng dẫn bạn sử dụng trong vòng 24-48 giờ."
   },
   {
@@ -121,7 +121,7 @@ const faqs = [
     answer: "Bạn có thể nâng cấp gói dịch vụ bất kỳ lúc nào. Việc hạ cấp gói dịch vụ sẽ có hiệu lực từ kỳ thanh toán tiếp theo. Chúng tôi hỗ trợ chuyển đổi dữ liệu miễn phí giữa các gói."
   },
   {
-    question: "Làm thế nào để tôi tích hợp GiftyID vào hệ thống quản lý hiện tại?",
+    question: "Làm thế nào để tôi tích hợp Postgifty vào hệ thống quản lý hiện tại?",
     answer: "Chúng tôi cung cấp API đầy đủ và webhook cho phép tích hợp liền mạch với hầu hết các hệ thống quản lý phổ biến như POS, CRM, ERP. Đội ngũ kỹ thuật của chúng tôi sẽ hỗ trợ trong quá trình tích hợp."
   }
 ];
@@ -139,8 +139,8 @@ const features = [
     priority: "Nền tảng"
   },
   {
-    name: "Hiển thị Gian hàng trên GiftyID",
-    description: "🌟 ƯU ĐÃI ĐỘC QUYỀN: Gian hàng và sản phẩm được hiển thị trên nền tảng GiftyID để tiếp cận khách hàng rộng rãi.",
+    name: "Hiển thị Gian hàng trên Postgifty",
+    description: "🌟 ƯU ĐÃI ĐỘC QUYỀN: Gian hàng và sản phẩm được hiển thị trên nền tảng Postgifty để tiếp cận khách hàng rộng rãi.",
     category: "I. TÍNH NĂNG CỐT LỖI (CORE FEATURES)",
     free: false,
     basic: "Hiển thị cơ bản",
@@ -181,7 +181,7 @@ const features = [
   },
   {
     name: "Diễn đàn CSKH & Hỏi đáp",
-    description: "Tạo một kênh giao tiếp hai chiều giữa Đối tác và khách hàng ngay trên GiftyID. Giúp giải đáp thắc mắc, xử lý vấn đề và xây dựng cộng đồng khách hàng trung thành.",
+    description: "Tạo một kênh giao tiếp hai chiều giữa Đối tác và khách hàng ngay trên Postgifty. Giúp giải đáp thắc mắc, xử lý vấn đề và xây dựng cộng đồng khách hàng trung thành.",
     category: "I. TÍNH NĂNG CỐT LỖI (CORE FEATURES)",
     free: false,
     basic: true,
@@ -192,7 +192,7 @@ const features = [
   // II. TÍNH NĂNG ĐỘC QUYỀN & TĂNG TRƯỞNG (EXCLUSIVE & GROWTH FEATURES)
   {
     name: "Tích hợp Mạng lưới CTV/MGM/Affiliate",
-    description: "🔥 LỢI THẾ ĐỘC QUYỀN CỦA GIFTYID. Tự động tạo link affiliate cho từng CTV. Đối tác tiếp cận ngay lập tức mạng lưới hàng trăm CTV (đặc biệt là CTV Bưu điện) để quảng bá sản phẩm/dịch vụ của mình mà không cần tự xây dựng.",
+    description: "🔥 LỢI THẾ ĐỘC QUYỀN CỦA POSTGIFTY. Tự động tạo link affiliate cho từng CTV. Đối tác tiếp cận ngay lập tức mạng lưới hàng trăm CTV (đặc biệt là CTV Bưu điện) để quảng bá sản phẩm/dịch vụ của mình mà không cần tự xây dựng.",
     category: "II. TÍNH NĂNG ĐỘC QUYỀN & TĂNG TRƯỞNG (EXCLUSIVE & GROWTH FEATURES)",
     free: false,
     basic: true,
@@ -264,7 +264,7 @@ const features = [
   },
   {
     name: "Tích hợp Vận chuyển (VNPost)",
-    description: "🔥 ĐỐI TÁC CHIẾN LƯỢC. Kết nối trực tiếp với hệ thống của VNPost. Tự động tính phí vận chuyển đồng giá, tạo vận đơn và theo dõi hành trình đơn hàng ngay trên GiftyID. Đảm bảo quy trình giao nhận chuyên nghiệp, tin cậy.",
+    description: "🔥 ĐỐI TÁC CHIẾN LƯỢC. Kết nối trực tiếp với hệ thống của VNPost. Tự động tính phí vận chuyển đồng giá, tạo vận đơn và theo dõi hành trình đơn hàng ngay trên Postgifty. Đảm bảo quy trình giao nhận chuyên nghiệp, tin cậy.",
     category: "III. TÍNH NĂNG MỞ RỘNG & TÍCH HỢP NÂNG CAO (ADVANCED & INTEGRATION FEATURES)",
     free: false,
     basic: false,
@@ -275,7 +275,7 @@ const features = [
   },
   {
     name: "Tích hợp CRM/POS/ERP",
-    description: "Khả năng kết nối GiftyID với các hệ thống quản lý khách hàng (CRM), quản lý bán hàng tại điểm bán (POS), hoặc quản lý tổng thể doanh nghiệp (ERP) mà Đối tác đang sử dụng. (Thực hiện theo yêu cầu riêng).",
+    description: "Khả năng kết nối Postgifty với các hệ thống quản lý khách hàng (CRM), quản lý bán hàng tại điểm bán (POS), hoặc quản lý tổng thể doanh nghiệp (ERP) mà Đối tác đang sử dụng. (Thực hiện theo yêu cầu riêng).",
     category: "III. TÍNH NĂNG MỞ RỘNG & TÍCH HỢP NÂNG CAO (ADVANCED & INTEGRATION FEATURES)",
     free: false,
     basic: "Liên hệ",
@@ -295,7 +295,7 @@ const features = [
   },
   {
     name: "Thiết kế Giao diện Zalo Mini App Theo Yêu cầu",
-    description: "Đối với các Đối tác Doanh nghiệp, GiftyID cung cấp dịch vụ thiết kế giao diện gian hàng độc quyền, mang đậm dấu ấn thương hiệu.",
+    description: "Đối với các Đối tác Doanh nghiệp, Postgifty cung cấp dịch vụ thiết kế giao diện gian hàng độc quyền, mang đậm dấu ấn thương hiệu.",
     category: "III. TÍNH NĂNG MỞ RỘNG & TÍCH HỢP NÂNG CAO (ADVANCED & INTEGRATION FEATURES)",
     free: false,
     basic: "Liên hệ",
@@ -475,7 +475,7 @@ export default function DichVuPage() {
               🚀 Nền Tảng Gian Hàng Đa Năng Trên <span className="text-yellow-300 block sm:inline">Zalo Mini App</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-blue-100 mb-6 sm:mb-8 leading-relaxed px-4 sm:px-0">
-              <strong>GiftyID</strong> - Giải pháp toàn diện giúp <span className="text-yellow-300 font-semibold">Đối tác Kinh doanh</span> xây dựng gian hàng chuyên nghiệp, quản lý bán hàng hiệu quả và mở rộng mạng lưới khách hàng trên hệ sinh thái <span className="text-yellow-300 font-semibold">75+ triệu người dùng Zalo</span>
+              <strong>Postgifty</strong> - Giải pháp toàn diện giúp <span className="text-yellow-300 font-semibold">Đối tác Kinh doanh</span> xây dựng gian hàng chuyên nghiệp, quản lý bán hàng hiệu quả và mở rộng mạng lưới khách hàng trên hệ sinh thái <span className="text-yellow-300 font-semibold">75+ triệu người dùng Zalo</span>
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-6 sm:mb-8 px-4 sm:px-0">
               <Link href="#pricing" className="inline-flex items-center justify-center bg-white hover:bg-blue-50 text-blue-700 font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg transition duration-300 text-base sm:text-lg w-full sm:w-auto">
@@ -596,11 +596,11 @@ export default function DichVuPage() {
         <div className="bg-white dark:bg-gray-900 rounded-lg sm:rounded-xl shadow-md overflow-hidden mb-12 sm:mb-16 lg:mb-20 border border-gray-200 dark:border-gray-800">
           <div className="p-4 sm:p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800">
             <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-2 text-center px-2 sm:px-0">
-              🎯 Bảng Tính Năng Hoàn Thiện & Độc Quyền Dành Cho Đối Tác GiftyID
+              🎯 Bảng Tính Năng Hoàn Thiện & Độc Quyền Dành Cho Đối Tác Postgifty
             </h3>
             <p className="text-gray-600 dark:text-gray-400 text-center max-w-3xl mx-auto text-xs sm:text-sm leading-relaxed px-2 sm:px-0">
-              Được thiết kế để làm nổi bật các giá trị và quyền lợi mà <strong>Đối tác Bán hàng</strong> và <strong>Đối tác Dịch vụ Đặt lịch</strong> sẽ nhận được khi tham gia và phát triển cùng GiftyID, 
-              đồng thời nhấn mạnh các <span className="text-blue-600 font-semibold">tính năng độc quyền</span> mà GiftyID cung cấp.
+              Được thiết kế để làm nổi bật các giá trị và quyền lợi mà <strong>Đối tác Bán hàng</strong> và <strong>Đối tác Dịch vụ Đặt lịch</strong> sẽ nhận được khi tham gia và phát triển cùng Postgifty,
+              đồng thời nhấn mạnh các <span className="text-blue-600 font-semibold">tính năng độc quyền</span> mà Postgifty cung cấp.
             </p>
           </div>
           
@@ -744,7 +744,7 @@ export default function DichVuPage() {
               <div>
                 <h4 className="font-bold text-gray-900 dark:text-white mb-3 flex items-center">
                   <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
-                  🌟 Lợi thế độc quyền khi trở thành Đối tác GiftyID
+                  🌟 Lợi thế độc quyền khi trở thành Đối tác Postgifty
                 </h4>
                 <div className="space-y-1 text-sm text-gray-600 dark:text-gray-300">
                   <div className="flex items-start gap-2">
@@ -813,7 +813,7 @@ export default function DichVuPage() {
             Câu Hỏi Thường Gặp
           </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-sm sm:text-base px-4 sm:px-0">
-            Tìm hiểu thêm về dịch vụ đặt lịch của GiftyID và cách nó có thể phục vụ nhu cầu doanh nghiệp của bạn
+            Tìm hiểu thêm về dịch vụ đặt lịch của Postgifty và cách nó có thể phục vụ nhu cầu doanh nghiệp của bạn
           </p>
         </div>
         

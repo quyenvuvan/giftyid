@@ -297,7 +297,7 @@ Với nền tảng hợp tác giữa Gifty Tech & Bưu điện TP. Hải Phòng,
                     Đối tác đề xuất giá bán dựa trên giá tham khảo từ Shopee (đảm bảo chênh lệch hợp lý, không quá 15%).
                   </p>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    GiftyID sẽ cùng đối tác thống nhất giá niêm yết cuối cùng, đảm bảo giá ổn định và hấp dẫn cho Người mua.
+                    Postgifty sẽ cùng đối tác thống nhất giá niêm yết cuối cùng, đảm bảo giá ổn định và hấp dẫn cho Người mua.
                   </p>
                 </div> */}
               </div>
@@ -317,12 +317,12 @@ Với nền tảng hợp tác giữa Gifty Tech & Bưu điện TP. Hải Phòng,
                   </div>
                   <div className="border-l-4 border-blue-500 pl-4 mb-3">
                     <p className="text-gray-700 dark:text-gray-300 font-medium">
-                      GiftyID hợp tác với Bưu Điện tỉnh Hải Dương, đảm bảo giao hàng tận nhà nhanh chóng, tin cậy.
+                      Postgifty hợp tác với Bưu Điện tỉnh Hải Dương, đảm bảo giao hàng tận nhà nhanh chóng, tin cậy.
                     </p>
                   </div>
                   <div className="border-l-4 border-blue-500 pl-4">
                     <p className="text-gray-700 dark:text-gray-300 font-medium">
-                      Điều đặc biệt: GiftyID không thu lợi nhuận từ phí vận chuyển tiêu chuẩn. Toàn bộ phí Người mua trả sẽ được dùng để thanh toán cho Bưu Điện.
+                      Điều đặc biệt: Postgifty không thu lợi nhuận từ phí vận chuyển tiêu chuẩn. Toàn bộ phí Người mua trả sẽ được dùng để thanh toán cho Bưu Điện.
                     </p>
                   </div>
                 </div> */}
@@ -337,7 +337,7 @@ Với nền tảng hợp tác giữa Gifty Tech & Bưu điện TP. Hải Phòng,
                 </h3>
                 {/* <div className="bg-gray-50 dark:bg-gray-700/50 p-5 rounded-xl">
                   <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
-                    GiftyID thực hiện đối soát và thanh toán doanh thu cho đối tác <span className="font-bold text-blue-600 dark:text-blue-400">02 LẦN MỖI THÁNG</span>, giúp bạn quản lý dòng tiền hiệu quả.
+                    Postgifty thực hiện đối soát và thanh toán doanh thu cho đối tác <span className="font-bold text-blue-600 dark:text-blue-400">02 LẦN MỖI THÁNG</span>, giúp bạn quản lý dòng tiền hiệu quả.
                   </p>
                 </div> */}
               </div>
@@ -364,7 +364,7 @@ Với nền tảng hợp tác giữa Gifty Tech & Bưu điện TP. Hải Phòng,
                 <div className="relative rounded-2xl p-6 text-center bg-gradient-to-b from-indigo-50 to-white dark:from-indigo-900/30 dark:to-gray-800 hover:shadow-xl transition-all duration-300 border border-indigo-100 dark:border-indigo-800/30">
                   <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 w-14 h-14 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full flex items-center justify-center text-xl font-bold shadow-lg">2</div>
                   <h3 className="font-bold mt-6 mb-4 text-indigo-700 dark:text-indigo-400 text-xl">Xét Duyệt</h3>
-                  <p className="text-gray-700 dark:text-gray-300">GiftyID xem xét và liên hệ trong vòng 3 ngày làm việc để thảo luận chi tiết</p>
+                  <p className="text-gray-700 dark:text-gray-300">Postgifty xem xét và liên hệ trong vòng 3 ngày làm việc để thảo luận chi tiết</p>
                 </div>
                 
                 <div className="relative rounded-2xl p-6 text-center bg-gradient-to-b from-indigo-50 to-white dark:from-indigo-900/30 dark:to-gray-800 hover:shadow-xl transition-all duration-300 border border-indigo-100 dark:border-indigo-800/30">
@@ -418,7 +418,7 @@ Với nền tảng hợp tác giữa Gifty Tech & Bưu điện TP. Hải Phòng,
                   </h3>
                   <div className="bg-white rounded-lg p-4 mb-4">
                     <p className="text-green-700 text-lg leading-relaxed">
-                      Cảm ơn <strong className="text-purple-600">{lastSubmittedData?.businessName}</strong> đã đăng ký hợp tác với GiftyID!
+                      Cảm ơn <strong className="text-purple-600">{lastSubmittedData?.businessName}</strong> đã đăng ký hợp tác với Postgifty!
                     </p>
                     <p className="text-green-600 mt-2">
                       Người liên hệ: <strong>{lastSubmittedData?.contactName}</strong>
@@ -427,7 +427,7 @@ Với nền tảng hợp tác giữa Gifty Tech & Bưu điện TP. Hải Phòng,
                   <div className="bg-blue-50 rounded-lg p-4 mb-4">
                     <p className="text-blue-800 font-medium mb-2">📞 Chúng tôi sẽ liên hệ tư vấn chi tiết trong vòng 3 ngày làm việc</p>
                     <p className="text-blue-700 text-sm">
-                      Đội ngũ chuyên gia sẽ hỗ trợ bạn thiết lập gian hàng và triển khai bán hàng hiệu quả trên nền tảng GiftyID
+                      Đội ngũ chuyên gia sẽ hỗ trợ bạn thiết lập gian hàng và triển khai bán hàng hiệu quả trên nền tảng Postgifty
                     </p>
                   </div>
                   <div className="mt-6 flex items-center justify-center space-x-2 text-sm text-green-600">
@@ -689,7 +689,7 @@ Với nền tảng hợp tác giữa Gifty Tech & Bưu điện TP. Hải Phòng,
                       <Link href="/privacy" className="text-purple-600 hover:text-purple-700 underline">
                         chính sách bảo mật
                       </Link>{' '}
-                      của GiftyID.
+                      của Postgifty.
                     </p>
                   </form>
                 </>
@@ -718,7 +718,7 @@ Với nền tảng hợp tác giữa Gifty Tech & Bưu điện TP. Hải Phòng,
           Đưa Doanh Nghiệp Của Bạn <span className="text-yellow-300">Lên Tầm Cao Mới!</span>
         </h2>
         <p className="text-blue-100 mb-8 text-lg max-w-2xl mx-auto">
-          Hãy trở thành đối tác của GiftyID ngay hôm nay và cùng nhau tạo nên những thành công mới trong thời đại số!
+          Hãy trở thành đối tác của Postgifty ngay hôm nay và cùng nhau tạo nên những thành công mới trong thời đại số!
         </p>
       </div>
 

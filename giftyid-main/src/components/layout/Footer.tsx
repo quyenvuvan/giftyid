@@ -40,7 +40,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/sell" className="hover:text-secondary transition-colors">
-                  Bán hàng trên GiftyID
+                  Bán hàng trên PostGifty
                 </Link>
               </li>
               <li>

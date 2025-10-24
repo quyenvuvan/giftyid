@@ -125,7 +125,7 @@ const createServiceImage = async (): Promise<void> => {
   ctx.fillStyle = 'white';
   ctx.font = 'bold 20px Arial';
   ctx.textAlign = 'center';
-  ctx.fillText('GiftyID', truckX + truckSize * 0.1, truckY);
+  ctx.fillText('PostGifty', truckX + truckSize * 0.1, truckY);
   
   // Calendar icon
   const calX = 100;

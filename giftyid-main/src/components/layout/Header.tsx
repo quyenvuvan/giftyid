@@ -157,8 +157,8 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
               <Image
-                src="/logo.png"
-                alt="GiftyID"
+                src="/logo.jpg"
+                alt="Postgifty"
                 width={150}
                 height={40}
                 className="h-10 w-auto"
@@ -410,8 +410,8 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex-shrink-0" onClick={handleNavClick}>
             <Image
-              src="/logo.png"
-              alt="GiftyID"
+              src="/logo.jpg"
+              alt="Postgifty"
               width={150}
               height={40}
               className="h-10 w-auto"
@@ -584,7 +584,7 @@ export default function Header() {
                     className="nav-dropdown-item border-b border-neutral-200 dark:border-neutral-700 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors duration-200"
                     onClick={handleNavClick}
                   >
-                    Giới thiệu GiftyID
+                    Giới thiệu Postgifty
                   </Link>
                   <Link
                     href="/tinh-nang"
@@ -682,7 +682,7 @@ export default function Header() {
                   className="block py-3 px-8 bg-blue-700 hover:bg-blue-800 transition-colors duration-200 border-b border-blue-600"
                   onClick={handleNavClick}
                 >
-                  Giới thiệu GiftyID
+                  Giới thiệu Postgifty
                 </Link>
                 <Link
                   href="/tinh-nang"

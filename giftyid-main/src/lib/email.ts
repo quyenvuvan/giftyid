@@ -23,11 +23,11 @@ export const sendConsultationEmail = async (formData: {
   const mailOptions = {
     from: process.env.EMAIL_USER,
     to: `${process.env.EMAIL_USER}`, // Gửi về email của bạn
-    subject: '🔔 Đăng ký tư vấn mới từ GiftyID',
+    subject: '🔔 Đăng ký tư vấn mới từ PostGifty',
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #f9f9f9; padding: 20px;">
         <div style="background-color: #1e40af; color: white; text-align: center; padding: 20px; border-radius: 8px 8px 0 0;">
-          <h1 style="margin: 0; font-size: 24px;">🎯 GiftyID - Đăng ký tư vấn mới</h1>
+          <h1 style="margin: 0; font-size: 24px;">🎯 PostGifty - Đăng ký tư vấn mới</h1>
         </div>
         
         <div style="background-color: white; padding: 30px; border-radius: 0 0 8px 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
@@ -105,7 +105,7 @@ export const sendConsultationEmail = async (formData: {
         </div>
         
         <div style="text-align: center; margin-top: 20px; color: #6b7280; font-size: 14px;">
-          <p style="margin: 0;">Email được gửi tự động từ hệ thống GiftyID</p>
+          <p style="margin: 0;">Email được gửi tự động từ hệ thống PostGifty</p>
         </div>
       </div>
     `
@@ -138,11 +138,11 @@ export const sendPartnerRegisterEmail = async (formData: {
   const mailOptions = {
     from: process.env.EMAIL_USER,
     to: `${process.env.EMAIL_USER}`,  // Gửi về email của bạn
-    subject: '🤝 Đăng ký đối tác bán hàng mới từ GiftyID',
+    subject: '🤝 Đăng ký đối tác bán hàng mới từ PostGifty',
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #f9f9f9; padding: 20px;">
         <div style="background-color: #7c3aed; color: white; text-align: center; padding: 20px; border-radius: 8px 8px 0 0;">
-          <h1 style="margin: 0; font-size: 24px;">🤝 GiftyID - Đăng ký đối tác mới</h1>
+          <h1 style="margin: 0; font-size: 24px;">🤝 PostGifty - Đăng ký đối tác mới</h1>
         </div>
         
         <div style="background-color: white; padding: 30px; border-radius: 0 0 8px 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
@@ -256,7 +256,7 @@ export const sendPartnerRegisterEmail = async (formData: {
         </div>
         
         <div style="text-align: center; margin-top: 20px; color: #6b7280; font-size: 14px;">
-          <p style="margin: 0;">Email được gửi tự động từ hệ thống GiftyID</p>
+          <p style="margin: 0;">Email được gửi tự động từ hệ thống PostGifty</p>
         </div>
       </div>
     `
@@ -291,11 +291,11 @@ export const sendCollaboratorRegisterEmail = async (formData: {
   const mailOptions = {
     from: process.env.EMAIL_USER,
     to: `${process.env.EMAIL_USER}`,  // Gửi về email của bạn
-    subject: '👥 Đăng ký cộng tác viên mới từ GiftyID',
+    subject: '👥 Đăng ký cộng tác viên mới từ PostGifty',
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #f9f9f9; padding: 20px;">
         <div style="background-color: #059669; color: white; text-align: center; padding: 20px; border-radius: 8px 8px 0 0;">
-          <h1 style="margin: 0; font-size: 24px;">👥 GiftyID - Đăng ký CTV mới</h1>
+          <h1 style="margin: 0; font-size: 24px;">👥 PostGifty - Đăng ký CTV mới</h1>
         </div>
         
         <div style="background-color: white; padding: 30px; border-radius: 0 0 8px 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
@@ -422,7 +422,7 @@ export const sendCollaboratorRegisterEmail = async (formData: {
         </div>
         
         <div style="text-align: center; margin-top: 20px; color: #6b7280; font-size: 14px;">
-          <p style="margin: 0;">Email được gửi tự động từ hệ thống GiftyID</p>
+          <p style="margin: 0;">Email được gửi tự động từ hệ thống PostGifty</p>
         </div>
       </div>
     `
@@ -460,11 +460,11 @@ export const sendServicePricingEmail = async (formData: {
   const mailOptions = {
     from: process.env.EMAIL_USER,
     to: `${process.env.EMAIL_USER}`,
-    subject: '💰 Yêu cầu tính phí dịch vụ mới từ GiftyID',
+    subject: '💰 Yêu cầu tính phí dịch vụ mới từ PostGifty',
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #f9f9f9; padding: 20px;">
         <div style="background-color: #f59e0b; color: white; text-align: center; padding: 20px; border-radius: 8px 8px 0 0;">
-          <h1 style="margin: 0; font-size: 24px;">💰 GiftyID - Yêu cầu tính phí dịch vụ</h1>
+          <h1 style="margin: 0; font-size: 24px;">💰 PostGifty - Yêu cầu tính phí dịch vụ</h1>
         </div>
         
         <div style="background-color: white; padding: 30px; border-radius: 0 0 8px 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
@@ -550,7 +550,7 @@ export const sendServicePricingEmail = async (formData: {
         </div>
         
         <div style="text-align: center; margin-top: 20px; color: #6b7280; font-size: 14px;">
-          <p style="margin: 0;">Email được gửi tự động từ hệ thống GiftyID</p>
+          <p style="margin: 0;">Email được gửi tự động từ hệ thống PostGifty</p>
         </div>
       </div>
     `

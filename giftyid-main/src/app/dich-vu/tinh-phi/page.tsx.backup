@@ -46,8 +46,8 @@ const coreFeatures: ServiceFeature[] = [
   },
   {
     id: "hien-thi-giftyid",
-    name: "Hiển thị Gian hàng trên GiftyID",
-    description: "Gắn nhãn Shop Mall - Ưu tiên hiển thị cao nhất trên GiftyID",
+    name: "Hiển thị Gian hàng trên PostGifty",
+    description: "Gắn nhãn Shop Mall - Ưu tiên hiển thị cao nhất trên PostGifty",
     price: 0,
     included: true,
     category: "Tính năng cốt lõi",
@@ -55,7 +55,7 @@ const coreFeatures: ServiceFeature[] = [
     lastUpdated: "",
     highlight: true,
     details: [
-      "Hiển thị ưu tiên cao nhất trên GiftyID",
+      "Hiển thị ưu tiên cao nhất trên PostGifty",
       "Gắn nhãn Shop Mall độc quyền",
       "Tiếp cận 75+ triệu người dùng Zalo",
       "Tăng khả năng hiển thị và tương tác"

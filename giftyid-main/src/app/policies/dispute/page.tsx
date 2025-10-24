@@ -21,7 +21,7 @@ export default function DisputePage() {
               Khiếu nại, Tranh chấp
             </h2>
             <p className="text-lg text-blue-100 max-w-3xl mx-auto">
-              GiftyID xây dựng cơ chế giải quyết khiếu nại, tranh chấp với mục tiêu bảo vệ quyền lợi hợp pháp của tất cả các bên
+              PostGifty xây dựng cơ chế giải quyết khiếu nại, tranh chấp với mục tiêu bảo vệ quyền lợi hợp pháp của tất cả các bên
             </p>
           </div>
         </div>
@@ -37,7 +37,7 @@ export default function DisputePage() {
               <div className="mb-12">
                 <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg mb-8">
                   <p className="text-adaptive-gray leading-relaxed">
-                    GiftyID xây dựng cơ chế giải quyết khiếu nại, tranh chấp với mục tiêu bảo vệ quyền lợi hợp pháp của Người Mua và Đối tác Bán hàng, trên tinh thần minh bạch, công bằng và tuân thủ pháp luật.
+                    PostGifty xây dựng cơ chế giải quyết khiếu nại, tranh chấp với mục tiêu bảo vệ quyền lợi hợp pháp của Người Mua và Đối tác Bán hàng, trên tinh thần minh bạch, công bằng và tuân thủ pháp luật.
                   </p>
                 </div>
               </div>
@@ -58,7 +58,7 @@ export default function DisputePage() {
                         Tự thương lượng
                       </h3>
                       <p className="text-adaptive-gray text-sm">
-                        GiftyID đề cao giải pháp thương lượng, hòa giải giữa các bên nhằm duy trì sự tin cậy và mối quan hệ hợp tác lâu dài.
+                        PostGifty đề cao giải pháp thương lượng, hòa giải giữa các bên nhằm duy trì sự tin cậy và mối quan hệ hợp tác lâu dài.
                       </p>
                     </div>
                     
@@ -79,10 +79,10 @@ export default function DisputePage() {
                         <span className="w-8 h-8 bg-purple-100 dark:bg-purple-800 rounded-full flex items-center justify-center mr-3">
                           ⚖️
                         </span>
-                        Vai trò của GiftyID
+                        Vai trò của PostGifty
                       </h3>
                       <p className="text-adaptive-gray text-sm">
-                        GiftyID đóng vai trò là đơn vị trung gian, hỗ trợ các bên trong việc hòa giải và đưa ra phương án giải quyết dựa trên chính sách của nền tảng và thông tin thu thập được.
+                        PostGifty đóng vai trò là đơn vị trung gian, hỗ trợ các bên trong việc hòa giải và đưa ra phương án giải quyết dựa trên chính sách của nền tảng và thông tin thu thập được.
                       </p>
                     </div>
                     
@@ -126,7 +126,7 @@ export default function DisputePage() {
                         </h3>
                         <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
                           <p className="text-adaptive-gray leading-relaxed">
-                            Khi phát sinh vấn đề về chất lượng hàng hóa/dịch vụ, Người Mua sẽ liên hệ trực tiếp với Đối tác Bán hàng thông qua các công cụ trao đổi trên nền tảng GiftyID để yêu cầu giải quyết. Đối tác Bán hàng có trách nhiệm tiếp nhận và phản hồi Người Mua trong vòng <strong className="text-blue-600">48 giờ</strong>.
+                            Khi phát sinh vấn đề về chất lượng hàng hóa/dịch vụ, Người Mua sẽ liên hệ trực tiếp với Đối tác Bán hàng thông qua các công cụ trao đổi trên nền tảng PostGifty để yêu cầu giải quyết. Đối tác Bán hàng có trách nhiệm tiếp nhận và phản hồi Người Mua trong vòng <strong className="text-blue-600">48 giờ</strong>.
                           </p>
                         </div>
                       </div>
@@ -143,11 +143,11 @@ export default function DisputePage() {
                       </div>
                       <div className="flex-1">
                         <h3 className="text-xl font-semibold text-adaptive-heading mb-3">
-                          Gửi yêu cầu hỗ trợ đến GiftyID
+                          Gửi yêu cầu hỗ trợ đến PostGifty
                         </h3>
                         <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
                           <p className="text-adaptive-gray leading-relaxed mb-3">
-                            Nếu sau <strong className="text-green-600">03 ngày làm việc</strong> mà Đối tác Bán hàng không phản hồi hoặc hai bên không thể tự thỏa thuận, một trong hai bên có quyền gửi yêu cầu hỗ trợ giải quyết đến GiftyID qua các kênh chính thức.
+                            Nếu sau <strong className="text-green-600">03 ngày làm việc</strong> mà Đối tác Bán hàng không phản hồi hoặc hai bên không thể tự thỏa thuận, một trong hai bên có quyền gửi yêu cầu hỗ trợ giải quyết đến PostGifty qua các kênh chính thức.
                           </p>
                           <div className="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded border-l-4 border-yellow-500">
                             <p className="text-sm font-medium text-adaptive-heading mb-2">📋 Thông tin cần cung cấp:</p>
@@ -172,11 +172,11 @@ export default function DisputePage() {
                       </div>
                       <div className="flex-1">
                         <h3 className="text-xl font-semibold text-adaptive-heading mb-3">
-                          GiftyID tiếp nhận và xác minh
+                          PostGifty tiếp nhận và xác minh
                         </h3>
                         <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
                           <p className="text-adaptive-gray leading-relaxed">
-                            Bộ phận Chăm sóc Khách hàng của GiftyID sẽ tiếp nhận yêu cầu và phản hồi cho người khiếu nại trong vòng <strong className="text-purple-600">24 giờ làm việc</strong>. GiftyID sẽ tiến hành xác minh thông tin, thu thập bằng chứng từ cả hai phía để có cái nhìn toàn diện về vụ việc.
+                            Bộ phận Chăm sóc Khách hàng của PostGifty sẽ tiếp nhận yêu cầu và phản hồi cho người khiếu nại trong vòng <strong className="text-purple-600">24 giờ làm việc</strong>. PostGifty sẽ tiến hành xác minh thông tin, thu thập bằng chứng từ cả hai phía để có cái nhìn toàn diện về vụ việc.
                           </p>
                         </div>
                       </div>
@@ -193,11 +193,11 @@ export default function DisputePage() {
                       </div>
                       <div className="flex-1">
                         <h3 className="text-xl font-semibold text-adaptive-heading mb-3">
-                          GiftyID đưa ra phương án giải quyết
+                          PostGifty đưa ra phương án giải quyết
                         </h3>
                         <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
                           <p className="text-adaptive-gray leading-relaxed">
-                            Dựa trên các thông tin đã xác minh, GiftyID sẽ đưa ra phương án giải quyết đề xuất (ví dụ: đổi/trả hàng, hoàn tiền, bồi thường...) trong vòng <strong className="text-orange-600">03-07 ngày làm việc</strong>. Phương án này được đưa ra dựa trên chính sách của GiftyID và mức độ lỗi của các bên.
+                            Dựa trên các thông tin đã xác minh, PostGifty sẽ đưa ra phương án giải quyết đề xuất (ví dụ: đổi/trả hàng, hoàn tiền, bồi thường...) trong vòng <strong className="text-orange-600">03-07 ngày làm việc</strong>. Phương án này được đưa ra dựa trên chính sách của PostGifty và mức độ lỗi của các bên.
                           </p>
                         </div>
                       </div>
@@ -218,7 +218,7 @@ export default function DisputePage() {
                         </h3>
                         <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
                           <p className="text-adaptive-gray leading-relaxed">
-                            Các bên có trách nhiệm thực hiện theo phương án giải quyết đã được thống nhất. GiftyID sẽ giám sát quá trình này và đóng khiếu nại khi vấn đề được giải quyết hoàn toàn.
+                            Các bên có trách nhiệm thực hiện theo phương án giải quyết đã được thống nhất. PostGifty sẽ giám sát quá trình này và đóng khiếu nại khi vấn đề được giải quyết hoàn toàn.
                           </p>
                         </div>
                       </div>
@@ -239,7 +239,7 @@ export default function DisputePage() {
                         </h3>
                         <div className="bg-red-50 dark:bg-red-900/20 p-4 rounded-lg border-l-4 border-red-500">
                           <p className="text-adaptive-gray leading-relaxed">
-                            Trong trường hợp không đồng ý với phương án giải quyết của GiftyID, các bên có quyền đưa vụ việc ra giải quyết tại Tòa án hoặc các cơ quan nhà nước có thẩm quyền theo quy định của pháp luật. GiftyID cam kết hợp tác và cung cấp thông tin khi có yêu cầu hợp pháp.
+                            Trong trường hợp không đồng ý với phương án giải quyết của PostGifty, các bên có quyền đưa vụ việc ra giải quyết tại Tòa án hoặc các cơ quan nhà nước có thẩm quyền theo quy định của pháp luật. PostGifty cam kết hợp tác và cung cấp thông tin khi có yêu cầu hợp pháp.
                           </p>
                         </div>
                       </div>
@@ -256,7 +256,7 @@ export default function DisputePage() {
                 </h2>
                 <div className="space-y-4 text-adaptive-gray leading-relaxed">
                   <p className="mb-6">
-                    Đối với các Đối tác Bán hàng có hành vi vi phạm chính sách hoặc xâm phạm quyền lợi của Người Mua, tùy theo mức độ, GiftyID sẽ áp dụng các biện pháp xử lý sau:
+                    Đối với các Đối tác Bán hàng có hành vi vi phạm chính sách hoặc xâm phạm quyền lợi của Người Mua, tùy theo mức độ, PostGifty sẽ áp dụng các biện pháp xử lý sau:
                   </p>
                   
                   <div className="space-y-3">
@@ -285,7 +285,7 @@ export default function DisputePage() {
                       <div className="w-8 h-8 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center flex-shrink-0">
                         <span className="text-gray-600 dark:text-gray-400 font-bold text-sm">4</span>
                       </div>
-                      <p>Chấm dứt vĩnh viễn hoạt động của gian hàng trên nền tảng GiftyID.</p>
+                      <p>Chấm dứt vĩnh viễn hoạt động của gian hàng trên nền tảng PostGifty.</p>
                     </div>
                     
                     <div className="flex items-start space-x-3 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg border-l-4 border-purple-500">
@@ -356,7 +356,7 @@ export default function DisputePage() {
                   Lưu ý quan trọng
                 </h3>
                 <p className="text-adaptive-gray leading-relaxed">
-                  GiftyID cam kết xử lý mọi khiếu nại một cách công bằng, minh bạch và nhanh chóng. Chúng tôi khuyến khích các bên luôn duy trì tinh thần hợp tác và thiện chí trong quá trình giải quyết tranh chấp để đạt được kết quả tốt nhất cho tất cả.
+                  PostGifty cam kết xử lý mọi khiếu nại một cách công bằng, minh bạch và nhanh chóng. Chúng tôi khuyến khích các bên luôn duy trì tinh thần hợp tác và thiện chí trong quá trình giải quyết tranh chấp để đạt được kết quả tốt nhất cho tất cả.
                 </p>
               </div>
             </div>

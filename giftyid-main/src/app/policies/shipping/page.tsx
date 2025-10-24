@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Chính sách vận chuyển và giao nhận | GiftyID',
-  description: 'Chính sách vận chuyển và giao nhận của GiftyID - Hợp tác chiến lược với VNPost đảm bảo giao hàng tin cậy và tối ưu chi phí.',
+  title: 'Chính sách vận chuyển và giao nhận | PostGifty',
+  description: 'Chính sách vận chuyển và giao nhận của PostGifty - Hợp tác chiến lược với VNPost đảm bảo giao hàng tin cậy và tối ưu chi phí.',
   keywords: 'chính sách vận chuyển, giao nhận, VNPost, COD, giao hàng tận nhà, Hải Dương',
 };
 
@@ -35,7 +35,7 @@ export default function ShippingPolicyPage() {
             <h2 className="text-2xl font-bold text-gray-800">Tổng quan</h2>
           </div>
           <p className="text-gray-600 leading-relaxed text-lg">
-            Chính sách vận chuyển và giao nhận của GiftyID được xây dựng dựa trên sự hợp tác chiến lược với 
+            Chính sách vận chuyển và giao nhận của PostGifty được xây dựng dựa trên sự hợp tác chiến lược với 
             <span className="font-semibold text-blue-600"> VNPost (Bưu điện Việt Nam)</span>, nhằm đảm bảo sự 
             <span className="font-semibold"> tiện lợi, tin cậy và tối ưu chi phí</span> cho tất cả các bên.
           </p>
@@ -61,7 +61,7 @@ export default function ShippingPolicyPage() {
                 Đối tác vận chuyển chính
               </h3>
               <p className="text-blue-700">
-                GiftyID hợp tác chiến lược với <strong>VNPost</strong> để thực hiện tất cả các hoạt động giao nhận hàng hóa.
+                PostGifty hợp tác chiến lược với <strong>VNPost</strong> để thực hiện tất cả các hoạt động giao nhận hàng hóa.
               </p>
             </div>
             
@@ -132,7 +132,7 @@ export default function ShippingPolicyPage() {
                 <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
                 </svg>
-                GiftyID
+                PostGifty
               </h3>
               <ul className="space-y-2 text-blue-700">
                 <li className="flex items-start">
@@ -232,7 +232,7 @@ export default function ShippingPolicyPage() {
                 Theo dõi đơn hàng
               </h3>
               <p className="text-gray-600">
-                Khách hàng có thể theo dõi tình trạng đơn hàng trực tiếp trên nền tảng GiftyID hoặc qua mã vận đơn VNPost.
+                Khách hàng có thể theo dõi tình trạng đơn hàng trực tiếp trên nền tảng PostGifty hoặc qua mã vận đơn VNPost.
               </p>
             </div>
 
@@ -244,7 +244,7 @@ export default function ShippingPolicyPage() {
                 Hỗ trợ khách hàng
               </h3>
               <p className="text-gray-600">
-                Đội ngũ hỗ trợ khách hàng của GiftyID sẵn sàng giải quyết mọi vấn đề liên quan đến vận chuyển và giao nhận.
+                Đội ngũ hỗ trợ khách hàng của PostGifty sẵn sàng giải quyết mọi vấn đề liên quan đến vận chuyển và giao nhận.
               </p>
             </div>
           </div>
