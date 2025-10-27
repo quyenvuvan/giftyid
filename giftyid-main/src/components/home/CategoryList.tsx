@@ -8,63 +8,33 @@ import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 const categories = [
   {
     id: 1,
-    name: 'Túi Ví Nữ',
-    slug: 'tui-vi-nu',
-    image: '/categories/handbag.svg'
-  },
-  {
-    id: 2,
-    name: 'Mẹ & Bé',
-    slug: 'me-va-be',
-    image: '/categories/mother-baby.svg'
-  },
-  {
-    id: 3,
-    name: 'Thú cưng',
-    slug: 'thu-cung',
-    image: '/categories/pet.svg'
-  },
-  {
-    id: 4,
-    name: 'Nhà Sách Online',
-    slug: 'nha-sach-online',
+    name: 'Trung tâm anh ngữ',
+    slug: 'trung-tam-anh-ngu',
     image: '/categories/book.svg'
   },
   {
-    id: 5,
-    name: 'Thời trang trẻ em',
-    slug: 'thoi-trang-tre-em',
+    id: 2,
+    name: 'Hoa tươi',
+    slug: 'hoa-tuoi',
+    image: '/categories/handbag.svg'
+  },
+  {
+    id: 3,
+    name: 'Thời trang',
+    slug: 'thoi-trang',
     image: '/categories/kids-fashion.svg'
   },
   {
-    id: 6,
-    name: 'Điện Thoại và Phụ Kiện',
-    slug: 'dien-thoai-va-phu-kien',
+    id: 4,
+    name: 'Studio chụp ảnh',
+    slug: 'studio-chup-anh',
     image: '/categories/phone.svg'
   },
   {
-    id: 7,
-    name: 'Phụ Kiện & Trang Sức Nữ',
-    slug: 'phu-kien-trang-suc-nu',
-    image: '/categories/accessories.svg'
-  },
-  {
-    id: 8,
-    name: 'Đồng Hồ',
-    slug: 'dong-ho',
-    image: '/categories/watch.svg'
-  },
-  {
-    id: 9,
-    name: 'Thiết Bị Điện Tử',
-    slug: 'thiet-bi-dien-tu',
+    id: 5,
+    name: 'Gara/showroom',
+    slug: 'gara-showroom',
     image: '/categories/electronics.svg'
-  },
-  {
-    id: 10,
-    name: 'Giày Dép Nam',
-    slug: 'giay-dep-nam',
-    image: '/categories/mens-shoes.svg'
   }
 ];
 

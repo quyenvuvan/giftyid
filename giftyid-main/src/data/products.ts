@@ -185,5 +185,140 @@ export const products: Product[] = [
     category: 'Chăm sóc cá nhân',
     categorySlug: 'cham-soc-ca-nhan',
     inStock: true
+  },
+  // Trung tâm anh ngữ products
+  {
+    id: '15',
+    name: 'Khóa học TOEIC Intensive',
+    slug: 'khoa-hoc-toeic-intensive',
+    description: 'Khóa học TOEIC Intensive với giáo viên bản ngữ, cam kết đầu ra 600+ điểm',
+    price: 5000000,
+    originalPrice: 6000000,
+    image: '/products/book.jpg',
+    category: 'Trung tâm anh ngữ',
+    categorySlug: 'trung-tam-anh-ngu',
+    inStock: true,
+    rating: 4.8
+  },
+  {
+    id: '16',
+    name: 'Khóa học IELTS Speaking',
+    slug: 'khoa-hoc-ielts-speaking',
+    description: 'Khóa học IELTS Speaking chuyên sâu với giáo viên có chứng chỉ IELTS 8.0+',
+    price: 3000000,
+    originalPrice: 3500000,
+    image: '/products/book.jpg',
+    category: 'Trung tâm anh ngữ',
+    categorySlug: 'trung-tam-anh-ngu',
+    inStock: true,
+    rating: 4.9
+  },
+  // Hoa tươi products
+  {
+    id: '17',
+    name: 'Bó hoa hồng đỏ 12 bông',
+    slug: 'bo-hoa-hong-do-12-bong',
+    description: 'Bó hoa hồng đỏ tươi 12 bông, kèm thiệp chúc mừng',
+    price: 350000,
+    originalPrice: 400000,
+    image: '/products/book.jpg',
+    category: 'Hoa tươi',
+    categorySlug: 'hoa-tuoi',
+    inStock: true,
+    rating: 4.7
+  },
+  {
+    id: '18',
+    name: 'Giỏ hoa sinh nhật',
+    slug: 'gio-hoa-sinh-nhat',
+    description: 'Giỏ hoa sinh nhật với hoa hồng, baby và hoa phụ kiện',
+    price: 800000,
+    originalPrice: 900000,
+    image: '/products/book.jpg',
+    category: 'Hoa tươi',
+    categorySlug: 'hoa-tuoi',
+    inStock: true,
+    rating: 4.6
+  },
+  // Thời trang products
+  {
+    id: '19',
+    name: 'Áo sơ mi nam công sở',
+    slug: 'ao-so-mi-nam-cong-so',
+    description: 'Áo sơ mi nam công sở, chất liệu cotton cao cấp, form dáng chuẩn',
+    price: 450000,
+    originalPrice: 550000,
+    image: '/products/book.jpg',
+    category: 'Thời trang',
+    categorySlug: 'thoi-trang',
+    inStock: true,
+    rating: 4.5
+  },
+  {
+    id: '20',
+    name: 'Đầm công sở nữ',
+    slug: 'dam-cong-so-nu',
+    description: 'Đầm công sở nữ, thiết kế thanh lịch, phù hợp môi trường văn phòng',
+    price: 650000,
+    originalPrice: 750000,
+    image: '/products/book.jpg',
+    category: 'Thời trang',
+    categorySlug: 'thoi-trang',
+    inStock: true,
+    rating: 4.8
+  },
+  // Studio chụp ảnh products
+  {
+    id: '21',
+    name: 'Gói chụp ảnh chân dung',
+    slug: 'goi-chup-anh-chan-dung',
+    description: 'Gói chụp ảnh chân dung chuyên nghiệp, bao gồm 50 ảnh chỉnh sửa',
+    price: 1500000,
+    originalPrice: 1800000,
+    image: '/products/book.jpg',
+    category: 'Studio chụp ảnh',
+    categorySlug: 'studio-chup-anh',
+    inStock: true,
+    rating: 4.9
+  },
+  {
+    id: '22',
+    name: 'Gói chụp ảnh cưới',
+    slug: 'goi-chup-anh-cuoi',
+    description: 'Gói chụp ảnh cưới trọn gói, bao gồm ảnh ngoại cảnh và trong nhà',
+    price: 5000000,
+    originalPrice: 6000000,
+    image: '/products/book.jpg',
+    category: 'Studio chụp ảnh',
+    categorySlug: 'studio-chup-anh',
+    inStock: true,
+    rating: 5.0
+  },
+  // Gara/showroom products
+  {
+    id: '23',
+    name: 'Dịch vụ bảo dưỡng xe máy',
+    slug: 'dich-vu-bao-duong-xe-may',
+    description: 'Dịch vụ bảo dưỡng xe máy định kỳ, thay dầu, lọc gió, kiểm tra phanh',
+    price: 200000,
+    originalPrice: 250000,
+    image: '/products/book.jpg',
+    category: 'Gara/showroom',
+    categorySlug: 'gara-showroom',
+    inStock: true,
+    rating: 4.6
+  },
+  {
+    id: '24',
+    name: 'Dịch vụ sửa chữa động cơ',
+    slug: 'dich-vu-sua-chua-dong-co',
+    description: 'Dịch vụ sửa chữa động cơ xe máy chuyên nghiệp, bảo hành 6 tháng',
+    price: 800000,
+    originalPrice: 1000000,
+    image: '/products/book.jpg',
+    category: 'Gara/showroom',
+    categorySlug: 'gara-showroom',
+    inStock: true,
+    rating: 4.7
   }
-]; 
+];
