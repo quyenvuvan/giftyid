@@ -37,7 +37,7 @@ export default function PrivacyPage() {
               <div className="mb-12">
                 <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg mb-8">
                   <p className="text-adaptive-gray leading-relaxed">
-                    Công ty Cổ phần Công nghệ Gifty Tech (&quot;GiftyID&quot;, &quot;chúng tôi&quot;) hiểu rằng sự riêng tư và bảo mật thông tin cá nhân là vô cùng quan trọng đối với người dùng. Vì vậy, chúng tôi cam kết nỗ lực tối đa để bảo vệ thông tin của bạn khi sử dụng nền tảng thương mại dịch vụ PostGifty.
+                    Công ty Cổ phần Công nghệ Gifty Tech (&quot;PostGifty&quot;, &quot;chúng tôi&quot;) hiểu rằng sự riêng tư và bảo mật thông tin cá nhân là vô cùng quan trọng đối với người dùng. Vì vậy, chúng tôi cam kết nỗ lực tối đa để bảo vệ thông tin của bạn khi sử dụng nền tảng thương mại dịch vụ PostGifty.
                   </p>
                   <p className="text-adaptive-gray leading-relaxed mt-4">
                     Chính sách này mô tả cách chúng tôi thu thập, sử dụng, lưu trữ và bảo vệ thông tin cá nhân của bạn, tuân thủ theo các quy định của Nghị định 52/2013/NĐ-CP và các văn bản pháp luật liên quan về bảo vệ thông tin cá nhân.

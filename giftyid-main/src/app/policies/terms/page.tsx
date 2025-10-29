@@ -43,7 +43,7 @@ export default function TermsPage() {
                   I. Nguyên tắc chung
                 </h2>
                 <div className="space-y-4 text-adaptive-gray leading-relaxed">
-                  <p>• Nền tảng thương mại dịch vụ PostGifty (sau đây gọi là &quot;GiftyID&quot; hoặc &quot;Nền tảng&quot;) do Công ty Cổ phần Công nghệ Gifty Tech (&quot;Công ty&quot;) xây dựng và vận hành.</p>
+                  <p>• Nền tảng thương mại dịch vụ PostGifty (sau đây gọi là &quot;PostGifty&quot; hoặc &quot;Nền tảng&quot;) do Công ty Cổ phần Công nghệ Gifty Tech (&quot;Công ty&quot;) xây dựng và vận hành.</p>
                   <p>• PostGifty là một nền tảng thương mại dịch vụ đa tiện ích, hoạt động chủ yếu trên Zalo Mini App, nhằm mục đích kết nối ba bên: Người Mua, Đối tác Bán hàng (cung cấp sản phẩm và dịch vụ đặt lịch), và mạng lưới Cộng tác viên Bán hàng (CTVBH).</p>
                   <p>• Sứ mệnh của PostGifty là kết nối, đơn giản hóa và tối ưu hóa trải nghiệm mua sắm và dịch vụ thông qua sức mạnh của công nghệ, mang lại giá trị thiết thực cho người dùng và các đối tác tại thị trường Việt Nam, với trọng tâm ban đầu là tỉnh Hải Dương.</p>
                   <p>• Tổ chức, cá nhân tham gia giao dịch trên PostGifty phải tự do thỏa thuận trên cơ sở tôn trọng quyền và lợi ích hợp pháp của các bên, tuân thủ các quy định của pháp luật Việt Nam và quy chế này.</p>
@@ -59,7 +59,7 @@ export default function TermsPage() {
                 </h2>
                 <div className="space-y-4 text-adaptive-gray leading-relaxed">
                   <p>• <strong>Tên Nền tảng:</strong> Sàn giao dịch TMĐT PostGifty.</p>
-                  <p>• <strong>Địa chỉ truy cập:</strong> Nền tảng hoạt động chủ yếu trên Zalo Mini App &quot;GiftyID&quot;.</p>
+                  <p>• <strong>Địa chỉ truy cập:</strong> Nền tảng hoạt động chủ yếu trên Zalo Mini App &quot;PostGifty&quot;.</p>
                   <p>• <strong>Định nghĩa:</strong></p>
                   <div className="ml-6 space-y-3 bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
                     <p><strong>Người Mua:</strong> Là các cá nhân, tổ chức có đăng ký tài khoản trên PostGifty để mua sắm sản phẩm hoặc sử dụng dịch vụ.</p>

@@ -145,7 +145,7 @@ export default function Header() {
         <div className="bg-neutral-100 dark:bg-neutral-800 py-1 px-4">
           <div className="container mx-auto">
             <SimpleAddressSelector
-              initialAddress="TP. Hải Dương"
+              initialAddress="TP. Hải Phòng"
               onAddressChange={() => { }}
             />
           </div>
