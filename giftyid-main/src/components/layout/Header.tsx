@@ -13,7 +13,7 @@ import { FaClock, FaBlog, FaSignOutAlt, FaUser } from 'react-icons/fa';
 
 export default function Header() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [deliveryAddress, setDeliveryAddress] = useState("TP. Hải Dương");
+  const [deliveryAddress, setDeliveryAddress] = useState("TP. Hải Phòng");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
   const [serviceDropdownOpen, setServiceDropdownOpen] = useState(false);
@@ -59,7 +59,17 @@ export default function Header() {
     if (mounted) {
       const savedAddress = localStorage.getItem('deliveryAddress');
       if (savedAddress) {
-        setDeliveryAddress(savedAddress);
+        if (savedAddress === "TP. Hải Dương") {
+          // Migrate old default to new default
+          setDeliveryAddress("TP. Hải Phòng");
+          localStorage.setItem('deliveryAddress', "TP. Hải Phòng");
+        } else {
+          setDeliveryAddress(savedAddress);
+        }
+      } else {
+        // Set default to TP. Hải Phòng if no saved address
+        setDeliveryAddress("TP. Hải Phòng");
+        localStorage.setItem('deliveryAddress', "TP. Hải Phòng");
       }
     }
   }, [mounted]);
